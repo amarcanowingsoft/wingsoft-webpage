@@ -135,22 +135,29 @@
                 </ValidationObserver>
             </v-col>
         </v-row>
-        <div class="d-flex  mt-10">
-            <img
-                alt="iconAboutUs"
-                width="20"
-                style="margin-top:2px"
-                class="mr-2 "
-                height="20"
-                src="@/assets/img/logowingsoft256.png"
-            >
-            <span class="white--text subtitle-2 relativeindex2">Wingsoft © 2022, Todos los derechos reservados</span>
+        <div class="d-flex justify-space-between mt-10 relativeindex2">
+            <div class="d-flex ">
+                <img
+                    alt="iconAboutUs"
+                    width="20"
+                    style="margin-top:2px"
+                    class="mr-2 "
+                    height="20"
+                    src="@/assets/img/logowingsoft256.png"
+                >
+                <span class="white--text subtitle-2 relativeindex2">Wingsoft © 2022, Todos los derechos reservados</span>
+            </div>
+            <v-btn color="white" icon outlined small @click="goUp()"  class="ml-2"
+                v-if="$vuetify.breakpoint.xsOnly || $vuetify.breakpoint.smOnly" >
+                <v-icon style="font-size:21px">mdi-arrow-up</v-icon>
+            </v-btn>
         </div>
     </div>
-    
 </template>
 
 <script>
+import goTo from 'vuetify/lib/services/goto'
+
 export default {
   layout:'mainNoBGPurple',
     head () {
@@ -174,7 +181,14 @@ export default {
     methods:{
         onSubmit (value) {
             console.log(value)
-        }
+        },
+        goUp(){
+            goTo(0, {
+                duration: 200,
+                easing: 'easeInQuad',
+                offset: -9
+            })
+        },
     },
     mounted(){
     window.onwheel = e => {

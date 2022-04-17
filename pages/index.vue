@@ -1,27 +1,27 @@
 <template>
-  <div class="fill-height d-flex justify-center justify-md-start flex-column align-center px-md-16 tal" >
+  <div class="fill-height d-flex justify-center justify-md-start flex-column align-center px-md-16 tal"  >
   <div class="d-flex justify-center">
-      <div class="first-orbit d-flex justify-center align-center">
-        <div class="first-orbit-inner d-flex justify-center align-center">
-          <div class="jupiter">
+      <div class="first-orbit d-flex justify-center align-center orbit">
+        <div class="first-orbit-inner d-flex justify-center align-center orbit">
+          <div class="jupiter planet">
           </div>
-          <div class="second-orbit-inner d-flex justify-center align-center">
-            <div class="mars">
+          <div class="second-orbit-inner d-flex justify-center align-center orbit">
+            <div class="mars planet">
             </div>
-            <div class="third-orbit-inner d-flex justify-center align-center">
-              <div class="earth">
+            <div class="third-orbit-inner d-flex justify-center align-center orbit">
+              <div class="earth planet">
               </div>
-              <div class="fourth-orbit-inner d-flex justify-center align-center">
-                <div class="venus">
+              <div class="fourth-orbit-inner d-flex justify-center align-center orbit">
+                <div class="venus planet">
                 </div>
-                <div class="fifth-orbit-inner d-flex justify-center align-center">
-                  <div class="mercury">
+                <div class="fifth-orbit-inner d-flex justify-center align-center orbit">
+                  <div class="mercury planet">
                   </div>
-                  <div class="sun">
+                  <div class="sun planet">
                   </div>
-                  <div class="sun-top">
+                  <div class="sun-top planet">
                   </div>
-                  <div class="fifth-orbit-inner-fix-oversun ">
+                  <div class="fifth-orbit-inner-fix-oversun orbit">
                   </div>
                 </div>
               </div>
@@ -67,19 +67,19 @@
     </v-col>
     <v-col cols="12" class="pb-0 pt-md-16" style="overflow:hidden" v-if="$vuetify.breakpoint.lgOnly || $vuetify.breakpoint.xlOnly || $vuetify.breakpoint.mdOnly" >
        <div class="d-flex flex-column" style="height:290px;overflow:hidden">
-        <a href="https://www.facebook.com/wingsoftchile/" target="_blank" class="my-1 a-icon">
+        <a href="https://www.facebook.com/wingsoftchile/" target="_blank" class="my-1 a-icon" style="width:25px">
           <v-icon color="white" >mdi-facebook</v-icon>
         </a> 
-        <a href="https://www.linkedin.com/company/wingsoftcl" target="_blank" class="my-1 a-icon">
+        <a href="https://www.linkedin.com/company/wingsoftcl" target="_blank" class="my-1 a-icon" style="width:25px">
           <v-icon color="white" >mdi-linkedin</v-icon>
         </a>
-        <a href="https://www.instagram.com/wingsofthq" target="_blank" class="my-1 a-icon">
+        <a href="https://www.instagram.com/wingsofthq" target="_blank" class="my-1 a-icon" style="width:25px">
           <v-icon color="white" >mdi-instagram</v-icon>
         </a>
-        <a href="https://twitter.com/wingsoft" target="_blank" class="my-1 a-icon">
+        <a href="https://twitter.com/wingsoft" target="_blank" class="my-1 a-icon" style="width:25px">
           <v-icon color="white" >mdi-twitter</v-icon>
         </a>
-        <div style="width:1px;height:500px;position:relative;margin-left:10px;margin-top:5px" class="white  "></div>
+        <div style="width:1px;height:300px;position:relative;margin-left:10px;margin-top:5px" class="white  "></div>
       </div>
     </v-col>
   </v-row>
@@ -100,20 +100,68 @@ export default {
       if(e.deltaY >= 0){
         // Scrolling Down with mouse
         //console.log('Scroll Down');
-        if (this.$route.path == '/' && this.$vuetify.breakpoint.lgOnly || this.$vuetify.breakpoint.xlOnly || this.$vuetify.breakpoint.mdOnly ) this.$router.push('/aboutUs')
-        
+        if (this.$route.path == '/' && this.$vuetify.breakpoint.lgOnly || 
+        this.$vuetify.breakpoint.xlOnly || this.$vuetify.breakpoint.mdOnly ) {
+          this.goinOut()
+          setTimeout(async () => {
+            this.$router.push('/aboutUs')
+          }, 200);
+        }
       } else {
         // Scrolling Up with mouse
         //console.log('Scroll Up');
       }
     }
-  }
-  
+    
+  },
+  methods: {
+    goinOut(){
+      /*const planets = document.querySelectorAll('.planet');
+      
+      console.log(planets,orbits,'a')
+      planets.forEach(element => {
+        element.style.animationPlayState = 'paused'
+
+      });/**/
+      const orbits = document.querySelectorAll('.orbit');
+      orbits.forEach(element => {
+        element.style.animationPlayState = 'paused'
+      });
+
+      const jupiter = document.querySelector('.jupiter');
+      jupiter.style.animation= 'animation-planet 30s linear  forwards infinite, goinOutOrbitJupiter 250ms ease-in forwards  '
+      jupiter.style.animationPlayState = 'paused, running'
+
+      const mars = document.querySelector('.mars');
+      mars.style.animation= 'animation-planet 15s linear  forwards infinite, goinOutOrbitMars 250ms ease-in forwards  '
+      mars.style.animationPlayState = 'paused, running'
+
+      const earth = document.querySelector('.earth');
+      earth.style.animation= 'animation-planet 10s linear  forwards infinite, goinOutOrbitEarth 250ms ease-in forwards  '
+      earth.style.animationPlayState = 'paused, running'
+
+      const venus = document.querySelector('.venus');
+      venus.style.animation= 'animation-planet 7.5s linear  forwards infinite, goinOutOrbitVenus 250ms ease-in forwards  '
+      venus.style.animationPlayState = 'paused, running'
+
+      const mercury = document.querySelector('.mercury');
+      mercury.style.animation= 'animation-planet 6s linear  forwards infinite, goinOutOrbitMercury 250ms ease-in forwards  '
+      mercury.style.animationPlayState = 'paused, running'
+
+      const sun = document.querySelector('.sun');
+      sun.style.animationPlayState = 'paused, running'
+      const sunTop = document.querySelector('.sun-top');
+      sunTop.style.animationPlayState = 'paused'
+
+    }
+  },
 }
+
 
 </script>
 
 <style>
+ 
   .first-orbit{
     /* full responsive, solo tienes que modificar el width, height (deben ser iguales), el margin right y el top, no tocar el rotate y el rotatex*/ 
     transform: rotate(-10deg) rotateX(65deg) ;
@@ -124,7 +172,7 @@ export default {
     position: absolute;
     margin-right: -1400px; /*-760px;*/
     margin-top:-390px; /*-390px;*/
-    overflow: hidden;
+    /*overflow: hidden;*/
   }
   .first-orbit-inner{
     width: 95%;
@@ -144,6 +192,10 @@ export default {
     background-color: #EC0D78;
     animation: animation-planet 30s linear  forwards infinite  
   }
+  @keyframes goinOutOrbitJupiter{
+    from  {  margin-top: -2.05% ;  }
+    to { margin-top: -30% ;  margin-right: -40% }
+  }
   .second-orbit-inner{
     width: 80%;
     height: 80%;
@@ -161,6 +213,10 @@ export default {
     border-radius: 50% !important;
     background-color: #898989;
     animation: animation-planet 15s linear  forwards infinite  
+  }
+  @keyframes goinOutOrbitMars{
+    from  {  margin-top: -2.1% ;  }
+    to { margin-top: -30% ;  margin-right: -40% }
   }
   .third-orbit-inner{
     width: 78%;
@@ -180,6 +236,10 @@ export default {
     background-color: #319620;
     animation: animation-planet 10s linear  forwards infinite  
   }
+  @keyframes goinOutOrbitEarth{
+    from  {  margin-top: -6.3% ;  }
+    to { margin-top: -50% ;  margin-right: -70% }
+  }
   .fourth-orbit-inner{
     width: 65%;
     height: 65%;
@@ -197,6 +257,10 @@ export default {
     border-radius: 50% !important;
     background-color: #665DE3;
     animation: animation-planet 7.5s linear  forwards infinite  
+  }
+  @keyframes goinOutOrbitVenus{
+    from  {  margin-top: -6% ;  }
+    to { margin-top: -50% ;  margin-right: -70% }
   }
   .fifth-orbit-inner{
     width: 52%;
@@ -219,7 +283,10 @@ export default {
     animation: animation-planet 6s linear  forwards infinite;
     z-index: 15;
   }
-
+  @keyframes goinOutOrbitMercury{
+    from  {  margin-top: -8.1% ;  }
+    to { margin-top: -80% ;  margin-right: -90% }
+  }
   .sun{
     width: 55%; /* 152px;*/
     position: relative;
@@ -460,4 +527,6 @@ export default {
   .jupiter:hover{
     animation-play-state: paused;
   }*/
+
+  
 </style>
