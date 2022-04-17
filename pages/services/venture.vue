@@ -264,7 +264,7 @@
                         </span>
                         <span 
                         class="subtitle-1 font-weight-thin white--text my-1">
-                            Av. Del Parque 4265, Huechuraba, Chile
+                            Juan Valiente 3630, Vitacura, Chile
                         </span>
                         <span 
                         class="subtitle-1 font-weight-thin white--text my-1">

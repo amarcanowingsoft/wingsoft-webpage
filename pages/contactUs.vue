@@ -8,7 +8,7 @@
                         <div class="white mt-1" style="width:115px; height:1px"></div>
                     </div>
                     <h3 class="h6 font-weight-thin white--text mt-3">+01 234 567 890</h3>
-                    <h3 class="h6 font-weight-thin white--text">Av. Del Parque 4265, Huechuraba, Chile</h3>
+                    <h3 class="h6 font-weight-thin white--text">Juan Valiente 3630, Vitacura, Chile</h3>
                     <h3 class="h6 font-weight-thin white--text">contacto@wingsoft.com</h3>
                     <div class="d-flex flex-column justify-start mt-12">
                         <h2 class="h6 font-weight-bold white--text">Social</h2>

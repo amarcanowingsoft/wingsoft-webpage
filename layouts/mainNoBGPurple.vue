@@ -15,7 +15,7 @@
         <Navigation />      
       </v-navigation-drawer>    
       <Navbar colorNav="#44006D" @openMenu="drawer=$event"/>
-      <v-container fluid class="px-0 ">
+      <v-container fluid class="px-0 " style="padding:6%;">
         <Nuxt />
       </v-container>
     </v-main>    
