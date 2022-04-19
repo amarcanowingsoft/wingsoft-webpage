@@ -141,9 +141,26 @@ export default {
     width: 2.05%; /*31px;*/
     height: 4.85%;/*71px; */
     border-radius: 50% !important;
-    background-color: #EC0D78;
+    /* background-color: #EC0D78; */
+    background: url("https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg");
+    background-size: auto 7vmax;
+    box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #EC0D78,
+      inset 0.8vmax 0.8vmax 1vmax #c1410e88, inset 5vmax 5vmax 10vmax #000;
     animation: animation-planet 30s linear  forwards infinite  
   }
+
+  /* .jupiter {
+    width: 8vmax;
+    height: 8vmax;
+    top: 40%;
+    left: 45vmax;
+    background: url("https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg");
+    background-size: auto 7vmax;
+    box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #e7671191,
+      inset 0.8vmax 0.8vmax 1vmax #c1410e88, inset 5vmax 5vmax 10vmax #000;
+    animation: spin 9s linear infinite;
+  } */
+  
   .second-orbit-inner{
     width: 80%;
     height: 80%;
@@ -160,7 +177,9 @@ export default {
     height: 4.97%;  /*60px*/
     border-radius: 50% !important;
     background-color: #898989;
-    animation: animation-planet 15s linear  forwards infinite  
+    animation: animation-planet 15s linear  forwards infinite;
+    box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #ffffffca,
+    inset 0.8vmax 0.8vmax 0.8vmax #575758; 
   }
   .third-orbit-inner{
     width: 78%;
@@ -170,6 +189,16 @@ export default {
     border-width: 1px !important;
     animation: animation-orbit 30s linear  forwards infinite  
   }
+  /* .earth{
+    top: 0px;
+    margin-top: -6.3%; 
+    position: absolute;
+    width: 6.3%;  
+    height: 14.91%; 
+    border-radius: 50% !important;
+    background-color: #319620;
+    animation: animation-planet 10s linear  forwards infinite  
+  } */
   .earth{
     top: 0px;
     margin-top: -6.3%; /*-60px*/ 
@@ -177,16 +206,31 @@ export default {
     width: 6.3%; /*59px*/ 
     height: 14.91%; /*135px*/ 
     border-radius: 50% !important;
-    background-color: #319620;
-    animation: animation-planet 10s linear  forwards infinite  
+    /* background-color: #319620; */
+    background: url("https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg");
+    animation: animation-planet 10s linear  forwards infinite;
+    /* animation: spin 15s linear infinite; */
+    box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #319620,
+    inset 0.5vmax 0.5vmax 6vmax #000; 
   }
+  /* .earth{
+    top: 45%;
+    width: 5vmax;
+    height: 5vmax;
+    background: url("https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg");
+    background-size: auto 4vmax;
+    left: 34vmax;
+    animation: spin 15s linear infinite;
+    box-shadow: inset 0.5vmax 0.5vmax 0.5vmax rgba(75, 170, 146, 0.767),
+    inset 0.5vmax 0.5vmax 6vmax #000;
+  } */
   .fourth-orbit-inner{
     width: 65%;
     height: 65%;
     border: 1px solid #ffffffca !important;
     border-radius: 50% !important;
     border-width: 1px !important;
-    animation: animation-orbit 30s linear  forwards infinite  
+    animation: animation-orbit 30s linear  forwards infinite;
   }
   .venus{
     top: 0px;
@@ -195,8 +239,10 @@ export default {
     width: 6%; /*37px*/ 
     height:14.2%;  /*82px*/ 
     border-radius: 50% !important;
-    background-color: #665DE3;
-    animation: animation-planet 7.5s linear  forwards infinite  
+    background-color: #040131;
+    animation: animation-planet 7.5s linear  forwards infinite;
+    box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #665DE3,
+    inset 0.8vmax 0.8vmax 0.8vmax #07024d; 
   }
   .fifth-orbit-inner{
     width: 52%;
@@ -218,6 +264,8 @@ export default {
     background-color: #E37330;
     animation: animation-planet 6s linear  forwards infinite;
     z-index: 15;
+    box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #814509,
+    inset 0.8vmax 0.8vmax 0.8vmax #7e2d0b;
   }
 
   .sun{
@@ -225,10 +273,14 @@ export default {
     position: relative;
     height: 130.18%; /*  335px;*/
     border-radius: 50% !important;
-    background-color: #FFC75F;
+    /* background-color: #FFC75F; */
+    /* border-bottom:8vw solid #2a2419;; */
+    background: url("../assets/img/sun.png");
     animation: animation-planet  6s linear  forwards infinite, sun-fire  5s linear  forwards infinite;
     z-index: 5;
-    box-shadow: 0px 0px 50px #7108B1;
+    /* box-shadow: 0px 0px 50px #7108B1; */
+    box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #814509,
+    inset 0.8vmax 0.8vmax 0.8vmax #7e2d0b;
   }
 
   .sun-top{
@@ -240,6 +292,10 @@ export default {
     animation: animation-planet 6s linear  forwards infinite ;
     z-index: 20;
     border-top:8vw solid #FFC75F;
+    box-shadow: 0 0 8px 8px #ffffff63 inset;
+    /* background:url("../assets/img/sun.png"); */
+    /* box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #724d08,
+    inset 0.8vmax 0.8vmax 0.8vmax #563801; */
     
   }
 
