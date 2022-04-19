@@ -11,7 +11,7 @@
     </v-col>
     <v-col cols="12" class="px-lg-16">
         <v-row class="px-lg-16">
-            <v-col cols="12" md="4" class="d-flex justify-center pt-10">
+            <v-col cols="12" md="4" class="d-flex justify-center pt-10" style="min-height:318px">
                 <div class="cardService py-4 px-7 builder" @click="$router.push('/services/builder')" >
                     <div style="width:max-content">
                         <h2 class="primary--text text-box-animation text-center" style="font-size:30px">
@@ -36,7 +36,7 @@
                 </div>
             
             </v-col>
-            <v-col cols="12" md="4"  class="d-flex justify-center pt-10">
+            <v-col cols="12" md="4"  class="d-flex justify-center pt-10" style="min-height:318px">
                 <div class="cardService py-4 px-7 consulting" @click="$router.push('/services/consulting')">
                     <div style="width:max-content">
                         <h2 class="primary--text text-box-animation text-center" style="font-size:30px">
@@ -60,7 +60,7 @@
                     </div>
                 </div>
             </v-col>
-            <v-col cols="12" md="4" class="d-flex justify-center pt-10">
+            <v-col cols="12" md="4" class="d-flex justify-center pt-10" style="min-height:318px">
                 <div class="cardService py-4 px-7 venture" @click="$router.push('/services/venture')">
                     <div style="width:max-content">
                         <h2 class="primary--text text-box-animation text-center" style="font-size:30px">
@@ -91,13 +91,13 @@
         </v-col>   
         <div class="d-flex justify-center orbits-services">
             <div class="orbit-blue3 d-flex justify-center align-center">
-                <div class="orbit-blue-inner3 d-flex justify-center align-center">
+                <div class="orbit-blue-inner3 d-flex justify-center align-center orbit">
                     <div class="blue3">
                     </div>
                 </div>
             </div>
             <div class="orbit-green3 d-flex justify-center align-center">
-                <div class="orbit-green-inner3 d-flex justify-center align-center">
+                <div class="orbit-green-inner3 d-flex justify-center align-center orbit">
                     <div class="green3">
                     </div>
                 </div>
@@ -125,15 +125,44 @@ export default {
         if(e.deltaY >= 0){
             // Scrolling Down with mouse
             //console.log('Scroll Down');
-            if (this.$route.path == '/services'  && this.$vuetify.breakpoint.lgOnly || this.$vuetify.breakpoint.xlOnly || this.$vuetify.breakpoint.mdOnly) this.$router.push('/knowledge')
-            
-        } else {
+            if (this.$route.path == '/services'  && this.$vuetify.breakpoint.lgOnly 
+            || this.$vuetify.breakpoint.xlOnly || this.$vuetify.breakpoint.mdOnly) {
+                this.goinOut()
+                setTimeout(async () => {
+                    this.$router.push('/knowledge')
+                }, 200);
+            }
+        } 
+        else {
             // Scrolling Up with mouse
             //console.log('Scroll Up');
-            if (this.$route.path == '/services'  && this.$vuetify.breakpoint.lgOnly || this.$vuetify.breakpoint.xlOnly || this.$vuetify.breakpoint.mdOnly) this.$router.push('/partners')
+            if (this.$route.path == '/services'  && this.$vuetify.breakpoint.lgOnly 
+            || this.$vuetify.breakpoint.xlOnly || this.$vuetify.breakpoint.mdOnly) {
+                this.goinOut()
+                setTimeout(async () => {
+                    this.$router.push('/partners')
+                }, 200);
+            }
         }
         }
-    }
+    },
+    methods: {
+        goinOut(){
+          const orbits = document.querySelectorAll('.orbit');
+          orbits.forEach(element => {
+              element.style.animationPlayState = 'paused'
+          });
+
+          const blue3 = document.querySelector('.blue3');
+          blue3.style.animation= 'animation-planet 7s linear  forwards infinite, goinOutOrbitBlue3 250ms ease-in forwards  '
+          blue3.style.animationPlayState = 'paused, running'
+
+          const green3 = document.querySelector('.green3');
+          green3.style.animation= 'animation-planet 8.5s linear  forwards infinite, goinOutOrbitGreen3 250ms ease-in forwards  '
+          green3.style.animationPlayState = 'paused, running'
+
+      }
+    },
 }
 </script>
 
@@ -257,6 +286,10 @@ export default {
         background-color: #665DE3;
         animation: animation-planet 7s linear  forwards infinite  
     }
+    @keyframes goinOutOrbitBlue3{
+        from  {  margin-top: -5% ;  }
+        to { margin-top: -100% ;  margin-right: -100% }
+    }
 
     .orbit-green3{
         /* full responsive, solo tienes que modificar el width, height (deben ser iguales), el margin right y el top, no tocar el rotate y el rotatex*/ 
@@ -289,5 +322,9 @@ export default {
         border-radius: 50% !important;
         background-color: #319620;
         animation: animation-planet 8.5s linear  forwards infinite  
+    }
+    @keyframes goinOutOrbitGreen3{
+        from  {  margin-top: -10% ;  }
+        to { margin-top: -100% ;  margin-right: -100% }
     }
 </style>

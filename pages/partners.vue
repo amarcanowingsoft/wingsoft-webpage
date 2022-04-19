@@ -75,19 +75,19 @@
     </v-col>
     <div class="d-flex justify-center orbits-partners">
         <div class="orbit-blue2 d-flex justify-center align-center">
-            <div class="orbit-blue-inner2 d-flex justify-center align-center">
+            <div class="orbit-blue-inner2 d-flex justify-center align-center orbit">
                 <div class="blue2">
                 </div>
             </div>
         </div>
         <div class="orbit-orange2 d-flex justify-center align-center">
-            <div class="orbit-orange-inner2 d-flex justify-center align-center">
+            <div class="orbit-orange-inner2 d-flex justify-center align-center orbit">
                 <div class="orange2">
                 </div>
             </div>
         </div>
         <div class="orbit-green2 d-flex justify-center align-center">
-            <div class="orbit-green-inner2 d-flex justify-center align-center">
+            <div class="orbit-green-inner2 d-flex justify-center align-center orbit">
                 <div class="green2">
                 </div>
             </div>
@@ -110,14 +110,49 @@ export default {
       if(e.deltaY >= 0){
         // Scrolling Down with mouse
         //console.log('Scroll Down');
-        if (this.$route.path == '/partners'  && this.$vuetify.breakpoint.lgOnly || this.$vuetify.breakpoint.xlOnly || this.$vuetify.breakpoint.mdOnly) this.$router.push('/services')
+        if (this.$route.path == '/partners'  && this.$vuetify.breakpoint.lgOnly || 
+        this.$vuetify.breakpoint.xlOnly || this.$vuetify.breakpoint.mdOnly){
+            this.goinOut()
+            setTimeout(async () => {
+                this.$router.push('/services')
+            }, 200);
+        }
+       
         
       } else {
         // Scrolling Up with mouse
         //console.log('Scroll Up');
-        if (this.$route.path == '/partners'  && this.$vuetify.breakpoint.lgOnly || this.$vuetify.breakpoint.xlOnly || this.$vuetify.breakpoint.mdOnly) this.$router.push('/aboutUs')
+        if (this.$route.path == '/partners'  && this.$vuetify.breakpoint.lgOnly || 
+        this.$vuetify.breakpoint.xlOnly || this.$vuetify.breakpoint.mdOnly){
+          this.goinOut()
+          setTimeout(async () => {
+              this.$router.push('/aboutUs')
+          }, 200);
+        }
+        
       }
     }
+  },
+  methods:{
+    goinOut(){
+          const orbits = document.querySelectorAll('.orbit');
+          orbits.forEach(element => {
+              element.style.animationPlayState = 'paused'
+          });
+
+          const blue2 = document.querySelector('.blue2');
+          blue2.style.animation= 'animation-planet 7s linear  forwards infinite, goinOutOrbitBlue2 250ms ease-in forwards  '
+          blue2.style.animationPlayState = 'paused, running'
+
+          const orange2 = document.querySelector('.orange2');
+          orange2.style.animation= 'animation-planet 5s linear  forwards infinite, goinOutOrbitOrange2 250ms ease-in forwards  '
+          orange2.style.animationPlayState = 'paused, running'
+
+          const green2 = document.querySelector('.green2');
+          green2.style.animation= 'animation-planet 11s linear  forwards infinite, goinOutOrbitGreen2 250ms ease-in forwards  '
+          green2.style.animationPlayState = 'paused, running'
+
+      }
   }
 }
 </script>
@@ -300,7 +335,10 @@ export default {
         background-color: #665DE3;
         animation: animation-planet 7s linear  forwards infinite  
     }
-
+    @keyframes goinOutOrbitBlue2{
+        from  {  margin-top: -14% ;  }
+        to { margin-top: -100% ;  margin-right: -100% }
+    }
 
 
     .orbit-orange2{
@@ -335,6 +373,10 @@ export default {
         background-color: #E37330;
         animation: animation-planet 5s linear  forwards infinite  
     }
+    @keyframes goinOutOrbitOrange2{
+        from  {  margin-top: -11% ;  }
+        to { margin-top: -100% ;  margin-right: -100% }
+    }
 
     .orbit-green2{
         /* full responsive, solo tienes que modificar el width, height (deben ser iguales), el margin right y el top, no tocar el rotate y el rotatex*/ 
@@ -367,5 +409,9 @@ export default {
         border-radius: 50% !important;
         background-color: #319620;
         animation: animation-planet 11s linear  forwards infinite  
+    }
+    @keyframes goinOutOrbitGreen2{
+        from  {  margin-top: -11% ;  }
+        to { margin-top: 130% ;  margin-right:-130% }
     }
 </style>

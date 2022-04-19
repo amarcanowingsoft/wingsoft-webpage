@@ -273,8 +273,9 @@
                     </div>
                 </div>
             </v-col>
-            <v-col cols="12" class="relativeindex2">
-                 <div class="d-flex  mt-16">
+            <v-col cols="12" class="relativeindex2 d-flex justify-space-between">
+                 <div class="d-flex justify-space-between   mt-16" style="width:100%">
+                    <div class="d-flex ">
                     <img
                         alt="iconAboutUs"
                         width="20"
@@ -283,7 +284,12 @@
                         height="20"
                         src="@/assets/img/logowingsoft256.png"
                     >
-                    <span class="white--text subtitle-2">Wingsoft © 2022, Todos los derechos reservados</span>
+                    <span class="white--text subtitle-2" >Wingsoft © 2022, Todos los derechos reservados</span>
+                    </div>
+                    <v-btn color="white" icon outlined small @click="goUp()"  class="ml-2" 
+                        >
+                        <v-icon style="font-size:21px">mdi-arrow-up</v-icon>
+                    </v-btn>
                 </div>
             </v-col>
         </v-row>
@@ -291,6 +297,8 @@
 </template>
 
 <script>
+import goTo from 'vuetify/lib/services/goto'
+
 export default {
     layout:'mainNoBGGreen',
     head () {
@@ -319,7 +327,13 @@ export default {
         }
     },
     methods:{
-        
+        goUp(){
+            goTo(0, {
+                duration: 300,
+                easing: 'easeInQuad',
+                offset: -9
+            })
+        },
     },
     mounted(){
         const slider = document.querySelector('.cardContainer');
