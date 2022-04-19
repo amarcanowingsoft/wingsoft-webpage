@@ -15,7 +15,7 @@
         <Navigation />      
       </v-navigation-drawer>    
       <Navbar colorNav="#44006D" @openMenu="drawer=$event"/>
-      <v-container fluid class="px-0 " style="padding:6%;">
+      <v-container fluid class="px-0 padding-container-1900" style="padding:0%;">
         <Nuxt />
       </v-container>
     </v-main>    
@@ -67,5 +67,10 @@ export default {
   }
   .test{
     color: rgba(0, 0, 0, 0)
+  }
+  @media screen and (min-width: 1900px)  {
+    .padding-container-1900{
+     padding:6% !important;
+    }
   }
 </style>

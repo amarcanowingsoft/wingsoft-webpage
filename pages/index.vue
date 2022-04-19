@@ -338,7 +338,7 @@ export default {
   .fixed-z-index-text{
     position: relative;
     z-index: 21;
-    padding-top: 15%;
+    
   }
 
   .fixed-z-index-text h1{
@@ -498,14 +498,21 @@ export default {
       margin-top:-400px;
       margin-right: -2000px
     }
+    
+  }
+  @media screen and (min-width: 1900px)  {
+    .fixed-z-index-text{
+      padding-top: 15%;
+    }
   }
   @media screen and (min-width: 2300px)   {
     .first-orbit{
-      width: 1400px;
-      height: 1400px;
+      width: 1600px;
+      height: 1600px;
       margin-top:-400px;
       margin-right: -2400px
     }
+    
   }
   .a-icon i {
     transition: 0.3s ease-in-out;
