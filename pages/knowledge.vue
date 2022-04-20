@@ -15,6 +15,42 @@
              <img 
                   :src="require(`@/assets/img/knowledge.jpg`)"
               >
+              <div class="gradient-div d-flex align-end">
+                <div class="div-btns-img px-2 d-flex justify-space-between" style="width:100%; height:35px">
+                  <div class="d-flex">
+                     <span class="white--text caption mr-1">
+                      <v-icon small color="white">
+                        mdi-heart
+                      </v-icon>
+                      100k
+                    </span>
+                    <span class="white--text caption mr-1">
+                      <v-icon small color="white">
+                        mdi-eye
+                      </v-icon>
+                      100k
+                    </span>
+                    <span class="white--text caption">
+                      <v-icon small color="white">
+                        mdi-comment-multiple
+                      </v-icon>
+                      100k
+                    </span>
+                  </div>
+                  <div class="d-flex">
+                    <span class="white--text caption mr-1">
+                      <v-icon small color="white">
+                        mdi-share-variant
+                      </v-icon>
+                    </span>
+                    <span class="white--text caption">
+                      <v-icon small color="white">
+                        mdi-bookmark
+                      </v-icon>
+                    </span>
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
     </v-col>
@@ -77,6 +113,55 @@ export default {
       border-radius: 6px;
     }
 
+    .gradient-div{
+      width: 372px;
+      height: 209px;
+      position: relative;
+      top: -215px;
+      border-radius:  6px;
+      z-index: 2;
+      background-image: linear-gradient(#43006d00,#000000);
+      background-position:  0px 40px;
+      opacity: 0;
+      transition: 200ms ease-in;
+    }
+
+    .gradient-div:hover{
+      opacity: 1;
+    }
+
+     @media screen  and (max-width: 400px){
+      .cardKnowledge{
+        width: 290px;
+        height: 180px;
+      }
+      .cardKnowledge img{
+        width: 290px;
+        height: 180px;
+      }
+      .gradient-div{
+        width: 290px;
+        height: 180px;
+        top: -194px;
+      }
+      
+    }
+
+    .div-btns-img  i{
+      cursor: pointer;
+      color: white !important;
+      transition: 200ms ease-in;
+    }
+    .div-btns-img  span{
+      cursor: pointer;
+    }
+
+    .div-btns-img  span:hover i{
+      color: #FF0055 !important;
+      margin-top: -15px;
+    }
+    
+
     .orbits-knowledge{
         position: fixed;
         width: 750px;
@@ -116,5 +201,7 @@ export default {
         background-color: #9A00FA;
         animation: animation-planet 5s linear  forwards infinite  
     }
+
+    
 
 </style>

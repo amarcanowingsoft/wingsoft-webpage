@@ -1,6 +1,6 @@
 <template>
-  <v-app dark style="background-color:#44006D;">
-    <v-main class="bg-auth--img">
+  <v-app dark style="background-color:#44006D;overflow: hidden; position:relative">
+    <v-main class="bg-auth--img" style="">
       <v-navigation-drawer
         dark
         color="primary"
@@ -15,7 +15,7 @@
         <Navigation />      
       </v-navigation-drawer>    
       <Navbar @openMenu="drawer=$event"/>
-      <v-container fluid class="px-0 fill-height fill-width" style="height: 100vh;">
+      <v-container fluid class="px-0 fill-height fill-width" style="height: 100vh; " >
         <Nuxt />
       </v-container>
     </v-main>    

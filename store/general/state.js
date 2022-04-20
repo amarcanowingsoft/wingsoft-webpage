@@ -1,5 +1,6 @@
 export const state = () => ({
-    example:''
+    itsRedirecting:false,
+    lastPage:'',
     ///example store
 })
 export default state;

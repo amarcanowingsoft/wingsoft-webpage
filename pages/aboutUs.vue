@@ -74,25 +74,25 @@
     </v-col>    
     <div class="d-flex justify-center orbits-about-us">
         <div class="orbit-violet d-flex justify-center align-center">
-            <div class="orbit-violet-inner d-flex justify-center align-center">
+            <div class="orbit-violet-inner d-flex justify-center align-center orbit">
                 <div class="violet">
                 </div>
             </div>
         </div>
         <div class="orbit-blue d-flex justify-center align-center">
-            <div class="orbit-blue-inner d-flex justify-center align-center">
+            <div class="orbit-blue-inner d-flex justify-center align-center orbit">
                 <div class="blue">
                 </div>
             </div>
         </div>
         <div class="orbit-orange d-flex justify-center align-center">
-            <div class="orbit-orange-inner d-flex justify-center align-center">
+            <div class="orbit-orange-inner d-flex justify-center align-center orbit">
                 <div class="orange">
                 </div>
             </div>
         </div>
         <div class="orbit-green d-flex justify-center align-center">
-            <div class="orbit-green-inner d-flex justify-center align-center">
+            <div class="orbit-green-inner d-flex justify-center align-center orbit">
                 <div class="green">
                 </div>
             </div>
@@ -120,14 +120,53 @@ export default {
       if(e.deltaY >= 0){
         // Scrolling Down with mouse
         //console.log('Scroll Down');
-        if (this.$route.path == '/aboutUs'  && this.$vuetify.breakpoint.lgOnly || this.$vuetify.breakpoint.xlOnly || this.$vuetify.breakpoint.mdOnly) this.$router.push('/partners')
+        if (this.$route.path == '/aboutUs'  && this.$vuetify.breakpoint.lgOnly 
+        || this.$vuetify.breakpoint.xlOnly || this.$vuetify.breakpoint.mdOnly){
+            this.goinOut()
+            setTimeout(async () => {
+                this.$router.push('/partners')
+            }, 200);
+        }
         
       } else {
         // Scrolling Up with mouse
         //console.log('Scroll Up');
-        if (this.$route.path == '/aboutUs'  && this.$vuetify.breakpoint.lgOnly || this.$vuetify.breakpoint.xlOnly || this.$vuetify.breakpoint.mdOnly) this.$router.push('/')
+        if (this.$route.path == '/aboutUs'  && this.$vuetify.breakpoint.lgOnly 
+        || this.$vuetify.breakpoint.xlOnly || this.$vuetify.breakpoint.mdOnly) {
+            this.goinOut()
+            setTimeout(async () => {
+                this.$router.push('/')
+            }, 200);
+        }
+       
       }
     }
+  },
+  methods:{
+        goinOut(){
+     
+            const orbits = document.querySelectorAll('.orbit');
+            orbits.forEach(element => {
+                element.style.animationPlayState = 'paused'
+            });
+
+            const violet = document.querySelector('.violet');
+            violet.style.animation= 'animation-planet 10s linear  forwards infinite, goinOutOrbitViolet 250ms ease-in forwards  '
+            violet.style.animationPlayState = 'paused, running'
+
+            const blue = document.querySelector('.blue');
+            blue.style.animation= 'animation-planet 7s linear  forwards infinite, goinOutOrbitBlue 250ms ease-in forwards  '
+            blue.style.animationPlayState = 'paused, running'
+
+            const orange = document.querySelector('.orange');
+            orange.style.animation= 'animation-planet 6s linear  forwards infinite, goinOutOrbitOrange 250ms ease-in forwards  '
+            orange.style.animationPlayState = 'paused, running'
+
+            const green = document.querySelector('.green');
+            green.style.animation= 'animation-planet 11s linear  forwards infinite, goinOutOrbitGreen 250ms ease-in forwards  '
+            green.style.animationPlayState = 'paused, running'
+
+        }
   }
     
 }
@@ -215,6 +254,10 @@ export default {
         background-color: #EC0D78;
         animation: animation-planet 10s linear  forwards infinite  
     }
+    @keyframes goinOutOrbitViolet{
+        from  {  margin-top: -15% ;  }
+        to { margin-top: 100% ;  margin-right: 100% }
+    }
 
 
 
@@ -247,6 +290,10 @@ export default {
         border-radius: 50% !important;
         background-color: #665DE3;
         animation: animation-planet 7s linear  forwards infinite  
+    }
+    @keyframes goinOutOrbitBlue{
+        from  {  margin-top: -9% ;  }
+        to { margin-top: 100% ;  margin-right: 100% }
     }
 
 
@@ -282,6 +329,10 @@ export default {
         background-color: #E37330;
         animation: animation-planet 6s linear  forwards infinite  
     }
+    @keyframes goinOutOrbitOrange{
+        from  {  margin-top: -9% ;  }
+        to { margin-top: 100% ;  margin-right: 100% }
+    }
 
     .orbit-green{
         /* full responsive, solo tienes que modificar el width, height (deben ser iguales), el margin right y el top, no tocar el rotate y el rotatex*/ 
@@ -313,6 +364,11 @@ export default {
         border-radius: 50% !important;
         background-color: #319620;
         animation: animation-planet 11s linear  forwards infinite  
+    }
+
+    @keyframes goinOutOrbitGreen{
+        from  {  margin-top: -9% ;  }
+        to { margin-top: 100% ;  margin-right: 100% }
     }
 
     
