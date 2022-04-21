@@ -35,7 +35,7 @@
       <div class="fixed-z-index-text mt-md-10 ">
         <h1 class=" white--text font-weight-medium mt-2 text-center text-md-left px-6 px-md-0" >
           El mundo está cambiando rápido. 
-        </h1>
+        </h1><v-btn class="d-none" @click="pauseAnimations()"> a</v-btn> <v-btn class="d-none"  @click="resumeAnimations()">b</v-btn>
         <h1 class="white--text font-weight-bold text-center text-md-left px-6 px-md-0" >
           Te ayudamos a mantenerte al día.
         </h1>
@@ -116,13 +116,7 @@ export default {
   },
   methods: {
     goinOut(){
-      /*const planets = document.querySelectorAll('.planet');
-      
-      console.log(planets,orbits,'a')
-      planets.forEach(element => {
-        element.style.animationPlayState = 'paused'
-
-      });/**/
+     
       const orbits = document.querySelectorAll('.orbit');
       orbits.forEach(element => {
         element.style.animationPlayState = 'paused'
@@ -152,7 +146,28 @@ export default {
       sun.style.animationPlayState = 'paused, running'
       const sunTop = document.querySelector('.sun-top');
       sunTop.style.animationPlayState = 'paused'
+    },
+    pauseAnimations(){
+      const planets = document.querySelectorAll('.planet');
+      planets.forEach(element => {
+        element.style.animationPlayState = 'paused'
 
+      });
+      const orbits = document.querySelectorAll('.orbit');
+      orbits.forEach(element => {
+        element.style.animationPlayState = 'paused'
+      });
+    },
+    resumeAnimations(){
+      const planets = document.querySelectorAll('.planet');
+      planets.forEach(element => {
+        element.style.animationPlayState = 'running'
+
+      });
+      const orbits = document.querySelectorAll('.orbit');
+      orbits.forEach(element => {
+        element.style.animationPlayState = 'running'
+      });
     }
   },
 }
@@ -190,11 +205,18 @@ export default {
     height: 4.85%;/*71px; */
     border-radius: 50% !important;
     /* background-color: #EC0D78; */
-    background: url("https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg");
+    /*background: url("https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg");
     background-size: auto 7vmax;
-    box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #EC0D78,
-      inset 0.8vmax 0.8vmax 1vmax #c1410e88, inset 5vmax 5vmax 10vmax #000;
-    animation: animation-planet 30s linear  forwards infinite  
+    /*box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #EC0D78,
+                inset 0.8vmax 0.8vmax 1vmax #c1410e88, 
+                inset 5vmax 5vmax 10vmax #000;*/
+    background: url("@/assets/img/jupiter.webp");
+    background-repeat: repeat-x;
+    background-position:  0px 0px;
+      box-shadow: inset 0px 5px 10px -3.9px #e144069c,
+                inset 0px 5px 10px 0px #c1410e86, 
+                inset 5px 50px 32px 11px #000000bb;
+    animation: animation-planet 30s linear  forwards infinite  , animationTexturePlanet 30s linear  forwards infinite 
   }
 
   /* .jupiter {
@@ -228,7 +250,10 @@ export default {
     width: 2.1%; /*25px*/ 
     height: 4.97%;  /*60px*/
     border-radius: 50% !important;
-    background-color: #898989;
+    /*background-color: #898989;*/
+    background: url("@/assets/img/mars.webp");
+    background-repeat: repeat-x;
+    background-position:  0px 0px;
     animation: animation-planet 15s linear  forwards infinite;
     box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #ffffffca,
     inset 0.8vmax 0.8vmax 0.8vmax #575758; 
@@ -263,8 +288,10 @@ export default {
     height: 14.91%; /*135px*/ 
     border-radius: 50% !important;
     /* background-color: #319620; */
-    background: url("https://www.solarsystemscope.com/textures/download/2k_earth_daymap.jpg");
-    animation: animation-planet 10s linear  forwards infinite;
+    background: url("@/assets/img/earth.webp");
+    background-repeat: repeat-x;
+    background-position:  0px 0px;
+    animation: animation-planet 10s linear  forwards infinite  , animationTexturePlanet 40s linear  forwards infinite ;
     /* animation: spin 15s linear infinite; */
     box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #319620,
     inset 0.5vmax 0.5vmax 6vmax #000; 
@@ -302,8 +329,11 @@ export default {
     width: 6%; /*37px*/ 
     height:14.2%;  /*82px*/ 
     border-radius: 50% !important;
-    background-color: #040131;
-    animation: animation-planet 7.5s linear  forwards infinite;
+    /*background-color: #040131;*/
+    background: url("@/assets/img/venus.webp");
+    background-repeat: repeat-x;
+    background-position:  0px 0px;
+    animation: animation-planet 7.5s linear  forwards infinite  , animationTexturePlanetVenus 45s linear  forwards infinite ;
     box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #665DE3,
     inset 0.8vmax 0.8vmax 0.8vmax #07024d; 
   }
@@ -328,8 +358,11 @@ export default {
     width: 8.1%; /*25px*/ 
     height: 19.17%;  /*60px*/ 
     border-radius: 50% !important;
-    background-color: #E37330;
-    animation: animation-planet 6s linear  forwards infinite;
+    /*background-color: #E37330;*/
+    animation: animation-planet 6s linear  forwards infinite  , animationTexturePlanet 60s linear  forwards infinite ;
+    background: url("@/assets/img/mercury.webp");
+    background-repeat: repeat-x;
+    background-position:  0px 0px;
     z-index: 15;
     box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #814509,
     inset 0.8vmax 0.8vmax 0.8vmax #7e2d0b;
@@ -345,8 +378,11 @@ export default {
     border-radius: 50% !important;
     /* background-color: #FFC75F; */
     /* border-bottom:8vw solid #2a2419;; */
-    background: url("../assets/img/sun.png");
-    animation: animation-planet  6s linear  forwards infinite, sun-fire  5s linear  forwards infinite;
+    background: url("@/assets/img/sun.webp");
+    background-repeat: repeat-x;
+    background-position:  0px 0px;
+    background-size: 200% 100%;
+    animation: animation-planet  6s linear  forwards infinite, sun-fire  5s linear  forwards infinite  , animationTexturePlanet 200s linear  forwards infinite ;
     z-index: 5;
     /* box-shadow: 0px 0px 50px #7108B1; */
     box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #814509,
@@ -358,11 +394,15 @@ export default {
     position: absolute;
     height: 130.18%;/*  335px;*/
     border-radius: 50% !important;
-    background-color: transparent;
-    animation: animation-planet 6s linear  forwards infinite ;
+    background: url("@/assets/img/sun-top.webp");
+    background-repeat: repeat-x;
+    background-position:  0px 0px;
+    background-size: 200% 100%;
+    
+    animation: animation-planet 6s linear  forwards infinite   , animationTexturePlanet 200s linear  forwards infinite ;
     z-index: 20;
-    border-top:8vw solid #FFC75F;
-    box-shadow: 0 0 8px 8px #ffffff63 inset;
+    /*border-top:8vw solid #FFC75F;*/
+    /*box-shadow: 0 0 8px 8px #ffffff63 inset;*/
     /* background:url("../assets/img/sun.png"); */
     /* box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #724d08,
     inset 0.8vmax 0.8vmax 0.8vmax #563801; */
@@ -391,6 +431,16 @@ export default {
     0% { box-shadow: 0px 0px 50px #7108B1;}
     50% { box-shadow: 0px 0px 50px #ff6fd9; }
     100% { box-shadow: 0px 0px 50px #7108B1;}
+  }
+
+  @keyframes animationTexturePlanet{
+    0% { background-position:  0px 0px;  }
+    100%  { background-position:  600px 0px }
+  }
+  /* venus rotates in the opposite direction  */
+  @keyframes animationTexturePlanetVenus{
+    0% { background-position:  0px 0px;  }
+    100%  { background-position:  -600px 0px }
   }
 
  
@@ -561,7 +611,7 @@ export default {
   }
   @media screen and (min-width: 1900px)  {
     .fixed-z-index-text{
-      padding-top: 15%;
+      padding-top: 9%;
     }
   }
   @media screen and (min-width: 2300px)   {

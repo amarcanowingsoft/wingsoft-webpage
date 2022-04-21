@@ -57,20 +57,15 @@ export default {
   .bg-auth--img{
       padding-top: 10rem;
       padding-bottom: calc(10rem - 4.5rem);
-      /* background: linear-gradient(to right, rgba(85, 51, 51, 0.7) 0%, rgba(44, 4, 4, 0.7) 100%), url("@/assets/img/bg-auth.jpg"); */
-      /*background: linear-gradient(to right, rgba(22, 27, 79, 0.6) 0%, rgba(30, 0, 86, 0.811) 100%), url("@/assets/img/bg-image.png");*/
       background-color: white;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: scroll;
       background-size: cover;
   }
-  .test{
-    color: rgba(0, 0, 0, 0)
-  }
   @media screen and (min-width: 1900px)   {
     .padding-container-1900{
-     padding:6% !important;
+     padding:4% !important;
     }
   }
 </style>

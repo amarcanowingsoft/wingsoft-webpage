@@ -57,15 +57,11 @@ export default {
   .bg-auth--img{
       padding-top: 10rem;
       padding-bottom: calc(10rem - 4.5rem);
-      /* background: linear-gradient(to right, rgba(85, 51, 51, 0.7) 0%, rgba(44, 4, 4, 0.7) 100%), url("@/assets/img/bg-auth.jpg"); */
-      /*background: linear-gradient(to right, rgba(22, 27, 79, 0.6) 0%, rgba(30, 0, 86, 0.811) 100%), url("@/assets/img/bg-image.png");*/
       background-color: #665DE3;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
   }
-  .test{
-    color: rgba(0, 0, 0, 0)
-  }
+ 
 </style>
