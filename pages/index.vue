@@ -35,7 +35,7 @@
       <div class="fixed-z-index-text mt-md-10 ">
         <h1 class=" white--text font-weight-medium mt-2 text-center text-md-left px-6 px-md-0" >
           El mundo está cambiando rápido. 
-        </h1><v-btn class="d-none" @click="pauseAnimations()"> a</v-btn> <v-btn class="d-none"  @click="resumeAnimations()">b</v-btn>
+        </h1>
         <h1 class="white--text font-weight-bold text-center text-md-left px-6 px-md-0" >
           Te ayudamos a mantenerte al día.
         </h1>
@@ -123,30 +123,47 @@ export default {
       });
 
       const jupiter = document.querySelector('.jupiter');
-      jupiter.style.animation= 'animation-planet 30s linear  forwards infinite, goinOutOrbitJupiter 250ms ease-in forwards  '
-      jupiter.style.animationPlayState = 'paused, running'
+      jupiter.style.animation= `animation-planet 30s linear  forwards infinite, 
+                                animationTexturePlanet 40s linear  forwards infinite, 
+                                dinamic-shadow-jupiter 30s linear  forwards infinite,
+                                goinOutOrbitJupiter 250ms ease-in forwards `
+      jupiter.style.animationPlayState = 'paused, running, running, running'
 
       const mars = document.querySelector('.mars');
-      mars.style.animation= 'animation-planet 15s linear  forwards infinite, goinOutOrbitMars 250ms ease-in forwards  '
-      mars.style.animationPlayState = 'paused, running'
+      mars.style.animation= `animation-planet 15s linear  forwards infinite,
+                            animationTexturePlanet 45s linear  forwards infinite,
+                            dinamic-shadow-mars 15s linear  forwards infinite,
+                            goinOutOrbitMars 250ms ease-in forwards `
+      mars.style.animationPlayState = 'paused, running, running, running'
 
       const earth = document.querySelector('.earth');
-      earth.style.animation= 'animation-planet 10s linear  forwards infinite, goinOutOrbitEarth 250ms ease-in forwards  '
-      earth.style.animationPlayState = 'paused, running'
+      earth.style.animation= `animation-planet 10s linear  forwards infinite,
+                              animationTexturePlanet 40s linear  forwards infinite,
+                              dinamic-shadow-earth 10s linear  forwards infinite,
+                              goinOutOrbitEarth 250ms ease-in forwards  `
+      earth.style.animationPlayState = 'paused, running, running, running'
 
       const venus = document.querySelector('.venus');
-      venus.style.animation= 'animation-planet 7.5s linear  forwards infinite, goinOutOrbitVenus 250ms ease-in forwards  '
-      venus.style.animationPlayState = 'paused, running'
+      venus.style.animation= `animation-planet 7.5s linear  forwards infinite, 
+                              animationTexturePlanetVenus 45s linear  forwards infinite,
+                              dinamic-shadow-venus 7.5s linear  forwards infinite,
+                              goinOutOrbitVenus 250ms ease-in forwards `
+      venus.style.animationPlayState = 'paused, running, running, running'
 
       const mercury = document.querySelector('.mercury');
-      mercury.style.animation= 'animation-planet 6s linear  forwards infinite, goinOutOrbitMercury 250ms ease-in forwards  '
-      mercury.style.animationPlayState = 'paused, running'
+      mercury.style.animation= `animation-planet 6s linear  forwards infinite,
+                                animationTexturePlanet 60s linear  forwards infinite,
+                                dinamic-shadow-mercury 6s linear  forwards infinite,
+                                goinOutOrbitMercury 250ms ease-in forwards `
+      mercury.style.animationPlayState = 'paused, running, running, running'
 
       const sun = document.querySelector('.sun');
-      sun.style.animationPlayState = 'paused, running'
+      sun.style.animationPlayState = 'paused, running, running'
       const sunTop = document.querySelector('.sun-top');
-      sunTop.style.animationPlayState = 'paused'
+      sunTop.style.animationPlayState = 'paused, running'
     },
+
+    /*FOR TESTING ONLY */
     pauseAnimations(){
       const planets = document.querySelectorAll('.planet');
       planets.forEach(element => {
@@ -213,10 +230,34 @@ export default {
     background: url("@/assets/img/jupiter.webp");
     background-repeat: repeat-x;
     background-position:  0px 0px;
-      box-shadow: inset 0px 5px 10px -3.9px #e144069c,
-                inset 0px 5px 10px 0px #c1410e86, 
-                inset 5px 50px 32px 11px #000000bb;
-    animation: animation-planet 30s linear  forwards infinite  , animationTexturePlanet 30s linear  forwards infinite 
+    background-size: 200% 100%;
+    box-shadow: inset 0px -2.5VW 0.7VW -0.4VW #e1440636,
+                  inset 0px -2.5VW 0.7VW  0px #c1410e2a, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #00000082; 
+    animation: animation-planet 30s linear  forwards infinite, animationTexturePlanet 40s linear  forwards infinite,
+    dinamic-shadow-jupiter 30s linear  forwards infinite 
+  }
+  @keyframes dinamic-shadow-jupiter{
+    0%   {  
+      box-shadow: inset 0px -2.5VW 0.7VW -0.4VW #e1440636,
+                  inset 0px -2.5VW 0.7VW  0px #c1410e2a, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #00000082; }
+    25%  { 
+      box-shadow: inset 0.5VW 0VW 0.7VW -0.4VW #e144069c,
+                  inset 0.3VW 0VW  0.7VW  0px #c1410e86, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #000000a0;}
+    50%  {  
+      box-shadow: inset 0px 0.5VW 0.7VW -0.4VW #e144069c,
+                  inset 0px 0.5VW 0.7VW  0px #c1410e86, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #000000a0; }
+    75%  { 
+      box-shadow: inset -0.5VW 0VW 0.7VW -0.4VW #e144069c,
+                inset -0.3VW 0VW  0.7VW  0px #c1410e86, 
+                inset 0.5VW 5VW 3.2VW 1.1VW #000000a0;}
+    100%   {  
+      box-shadow: inset 0px -2.5VW 0.7VW -0.4VW #e1440636,
+                  inset 0px -2.5VW 0.7VW  0px #c1410e2a, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #00000082;  }
   }
 
   /* .jupiter {
@@ -254,9 +295,35 @@ export default {
     background: url("@/assets/img/mars.webp");
     background-repeat: repeat-x;
     background-position:  0px 0px;
-    animation: animation-planet 15s linear  forwards infinite;
-    box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #ffffffca,
-    inset 0.8vmax 0.8vmax 0.8vmax #575758; 
+    background-size: 200% 100%;
+    animation: animation-planet 15s linear  forwards infinite,animationTexturePlanet 45s linear  forwards infinite,
+    dinamic-shadow-mars 15s linear  forwards infinite ;
+    box-shadow: inset 0px -2VW 0.7VW -0.4VW #e115063b,
+                inset 0px -2VW 0.7VW  0px #c11a0e23, 
+                inset 0.5VW 5VW 3.2VW 1.1VW #00000062; 
+                
+  }
+   @keyframes dinamic-shadow-mars{
+    0%   {  
+      box-shadow: inset 0px -2VW 0.7VW -0.4VW #e115063b,
+                  inset 0px -2VW 0.7VW  0px #c11a0e23, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #00000062; }
+    25%  { 
+      box-shadow: inset 0.7VW 0VW 0.7VW -0.4VW #e115066d,
+                  inset 0.3VW 0VW 0.7VW  0px #c11a0e86, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #0000006e}
+    50%  {  
+      box-shadow: inset 0px 0.9VW 0.7VW -0.4VW #e115069c,
+                  inset 0px 0.5VW 0.7VW  0px #c11a0e86, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #00000082; }
+    75%  { 
+      box-shadow: inset -0.7VW 0VW 0.7VW -0.4VW #e115066d,
+                  inset -0.3VW 0VW 0.7VW  0px #c11a0e86, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #0000006e;}
+    100%   {  
+      box-shadow: inset 0px -2VW 0.7VW -0.4VW #e115063b,
+                  inset 0px -2VW 0.7VW  0px #c11a0e23, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #00000062;  }
   }
   @keyframes goinOutOrbitMars{
     from  {  margin-top: -2.1% ;  }
@@ -291,10 +358,35 @@ export default {
     background: url("@/assets/img/earth.webp");
     background-repeat: repeat-x;
     background-position:  0px 0px;
-    animation: animation-planet 10s linear  forwards infinite  , animationTexturePlanet 40s linear  forwards infinite ;
-    /* animation: spin 15s linear infinite; */
-    box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #319620,
-    inset 0.5vmax 0.5vmax 6vmax #000; 
+    background-size: 200% 100%;
+    animation: animation-planet 10s linear  forwards infinite  , animationTexturePlanet 40s linear  forwards infinite,
+    dinamic-shadow-earth 10s linear  forwards infinite  ;
+    
+    box-shadow: inset 0px -5VW 0.6VW -0.4VW #32962031,
+                inset 0px -2.5VW 0.7VW  0px rgba(32, 150, 107, 0.258), 
+                inset 0.5VW 5VW 3.2VW 1.1VW #0000005c;  
+  }
+  @keyframes dinamic-shadow-earth{
+    0%   {  
+      box-shadow: inset 0px -3VW 0.6VW -0.4VW #32962031,
+                  inset 0px -1.5VW 0.7VW  0px rgba(32, 150, 107, 0.258), 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #0000005c; }
+    25%  { 
+      box-shadow: inset 1.5VW  0VW 0.6VW -0.4VW #32962062,
+                  inset 0.6VW  0VW 0.7VW  0px rgba(32, 150, 107, 0.455), 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #00000082;}
+    50%  {  
+      box-shadow: inset 0px 3VW 0.6VW -0.4VW #32962062,
+                  inset 0px 1.5VW 0.7VW  0px rgba(32, 150, 107, 0.455), 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #00000082;  }
+    75%  { 
+      box-shadow: inset -1.5VW  0VW 0.6VW -0.4VW #32962062,
+                  inset -0.6VW  0VW 0.7VW  0px rgba(32, 150, 107, 0.455), 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #00000082;}
+    100%   {  
+      box-shadow: inset 0px -3VW 0.6VW -0.4VW #32962031,
+                  inset 0px -1.5VW 0.7VW  0px rgba(32, 150, 107, 0.258), 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #0000005c;   }
   }
   /* .earth{
     top: 45%;
@@ -333,9 +425,35 @@ export default {
     background: url("@/assets/img/venus.webp");
     background-repeat: repeat-x;
     background-position:  0px 0px;
-    animation: animation-planet 7.5s linear  forwards infinite  , animationTexturePlanetVenus 45s linear  forwards infinite ;
-    box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #665DE3,
-    inset 0.8vmax 0.8vmax 0.8vmax #07024d; 
+    background-size: 200% 100%;
+    animation: animation-planet 7.5s linear  forwards infinite  , animationTexturePlanetVenus 45s linear  forwards infinite,
+    dinamic-shadow-venus 7.5s linear  forwards infinite;
+
+    box-shadow: inset 0px -2.5VW 0.7VW -0.4VW #e1440636,
+                inset 0px -2.5VW 0.7VW  0px #c1410e2a, 
+                inset 0.5VW 5VW 3.2VW 1.1VW #00000082;  
+  }
+  @keyframes dinamic-shadow-venus{
+    0%   {  
+      box-shadow: inset 0px -2.5VW 0.7VW -0.4VW #e1440636,
+                  inset 0px -2.5VW 0.7VW  0px #c1410e2a, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #00000082; }
+    25%  { 
+      box-shadow: inset 0.5VW 0VW 0.7VW -0.4VW #e144069c,
+                  inset 0.3VW 0VW  0.7VW  0px #c1410e86, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #000000a0;}
+    50%  {  
+      box-shadow: inset 0px 0.5VW 0.7VW -0.4VW #e144069c,
+                  inset 0px 0.5VW 0.7VW  0px #c1410e86, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #000000a0; }
+    75%  { 
+      box-shadow: inset -0.5VW 0VW 0.7VW -0.4VW #e144069c,
+                  inset -0.3VW 0VW  0.7VW  0px #c1410e86, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #000000a0;}
+    100% {  
+      box-shadow: inset 0px -2.5VW 0.7VW -0.4VW #e1440636,
+                  inset 0px -2.5VW 0.7VW  0px #c1410e2a, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #00000082;  }
   }
   @keyframes goinOutOrbitVenus{
     from  {  margin-top: -6% ;  }
@@ -359,13 +477,38 @@ export default {
     height: 19.17%;  /*60px*/ 
     border-radius: 50% !important;
     /*background-color: #E37330;*/
-    animation: animation-planet 6s linear  forwards infinite  , animationTexturePlanet 60s linear  forwards infinite ;
+    animation: animation-planet 6s linear  forwards infinite  , animationTexturePlanet 60s linear  forwards infinite,
+    dinamic-shadow-mercury 6s linear  forwards infinite ;
     background: url("@/assets/img/mercury.webp");
     background-repeat: repeat-x;
     background-position:  0px 0px;
+    background-size: 200% 100%;
     z-index: 15;
-    box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #814509,
-    inset 0.8vmax 0.8vmax 0.8vmax #7e2d0b;
+     box-shadow:  inset 0px -2.5VW 0.7VW -0.4VW #c6c5c589,
+                  inset 0px -1VW 0.7VW  0px #c6c5c50e, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #00000024;  
+  }
+  @keyframes dinamic-shadow-mercury{
+    0%   {  
+      box-shadow: inset 0px -2.5VW 0.7VW -0.4VW #c6c5c589,
+                  inset 0px -1VW 0.7VW  0px #c6c5c50e, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #00000024;  }
+    25%  { 
+      box-shadow: inset 1VW 0VW 0.7VW -0.4VW #c6c5c5a2,
+                  inset 0.5VW 0VW 0.7VW  0px #c6c5c53f, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #000000a0; }
+    50%  {  
+      box-shadow: inset 0px 1VW 0.7VW -0.4VW #c6c5c5a2,
+                  inset 0px 0.5VW 0.7VW  0px #c6c5c53f, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #000000a0; }
+    75%  { 
+      box-shadow: inset -1VW 0VW 0.7VW -0.4VW #c6c5c5a2,
+                  inset -0.5VW 0VW 0.7VW  0px #c6c5c53f, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #000000a0; }
+    100%   {  
+      box-shadow: inset 0px -2.5VW 0.7VW -0.4VW #c6c5c589,
+                  inset 0px -1VW 0.7VW  0px #c6c5c50e, 
+                  inset 0.5VW 5VW 3.2VW 1.1VW #00000024;   }
   }
   @keyframes goinOutOrbitMercury{
     from  {  margin-top: -8.1% ;  }
@@ -385,8 +528,7 @@ export default {
     animation: animation-planet  6s linear  forwards infinite, sun-fire  5s linear  forwards infinite  , animationTexturePlanet 200s linear  forwards infinite ;
     z-index: 5;
     /* box-shadow: 0px 0px 50px #7108B1; */
-    box-shadow: inset 0.5vmax 0.5vmax 0.5vmax #814509,
-    inset 0.8vmax 0.8vmax 0.8vmax #7e2d0b;
+    
   }
 
   .sun-top{
