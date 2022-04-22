@@ -586,6 +586,7 @@ export default {
   }
 
  
+ 
   .fixed-z-index-text{
     position: relative;
     z-index: 21;
@@ -778,7 +779,22 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     bottom: 30px;
+    animation-name: moveImgScroll;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
   }
+   @keyframes moveImgScroll{
+     0% {
+        transform: translate3d(0,-2.5px,0)
+      }
+
+      to {
+        transform: translate3d(0,2.5px,0)
+      }
+    }
+
   /*
   .first-orbit-inner:hover{
     animation-play-state: paused;
