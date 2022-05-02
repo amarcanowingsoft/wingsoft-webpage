@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" sm="10" md="9"  lg="6" class="mt-6 mt-md-0 " >
-        <h1 class="h3 primary--text light-bolder text-center">
+        <h1 class="h3 primary--text light-bolder text-center responsiveTitles">
             Nuestros servicios
         </h1>
 
@@ -168,7 +168,8 @@ export default {
 
 <style>
     .cardService{
-        background: #FFFFFF 0% 0% no-repeat padding-box;
+        background-color: rgba(255, 255, 255, 0.568);
+        backdrop-filter: blur(8px);
         box-shadow: 12px 12px 12px #0000000D;
         border: 0.5px solid #AAAAAA;
         border-radius: 6px;
@@ -258,8 +259,8 @@ export default {
     .orbit-blue3{
         /* full responsive, solo tienes que modificar el width, height (deben ser iguales), el margin right y el top, no tocar el rotate y el rotatex*/ 
         transform: rotate(-15deg) rotateX(65deg) ;
-        width: 600px; 
-        height: 600px; 
+        width: 80%; 
+        height: 80%; 
         border-radius: 50% !important;
         border-width: 1px !important;
         position: absolute;
@@ -294,8 +295,8 @@ export default {
     .orbit-green3{
         /* full responsive, solo tienes que modificar el width, height (deben ser iguales), el margin right y el top, no tocar el rotate y el rotatex*/ 
         transform: rotate(-70deg) rotateX(67deg) ;
-        width: 430px; 
-        height: 430px; 
+        width: 57.33%;
+        height: 57.33%;
         border-radius: 50% !important;
         border-width: 1px !important;
         position: absolute;

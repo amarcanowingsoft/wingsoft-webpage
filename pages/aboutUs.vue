@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" class="px-6 px-sm-0 px-lg-12" >
     <v-col cols="12" sm="10" md="10"  lg="7" class="mt-6 mt-md-0  ">
-        <h1 class="h3 primary--text light-bolder text-center">
+        <h1 class="h3 primary--text light-bolder text-center responsiveTitles">
             Algo sobre nosotros
         </h1>
         <p class="subtitle-2 graytext--text text-center font-weight-normal mt-4" >
@@ -13,60 +13,66 @@
 
     </v-col>
     <v-col cols="12" sm="8" md="4" class="parrent pr-lg-15 relativecol " >
-        <div style="width:max-content">
-            <h2 class=" primary--text text-box-animation text-center" style="font-size:30px">
-                Quienes somos
-            </h2>
-             <div class="styled-div-animation-text-col terciary"></div>
-        </div>
-        <p class="subtitle-2 graytext--text  font-weight-normal mt-4 white" >
-            Wingsoft fue fundada en 1987, con actividades principales de construcción y 
-            alojamiento de sitios web. Está enmarcado por ejecutivos que cuentan con muchos 
-            años de experiencia en el campo de las tecnologías de la información, diseño web, 
-            diseño gráfico y marketing digital.
-        </p>
-        <div class="div-icon">
-            <img
-                class="iconAboutUs1black"
-                alt="iconAboutUs"
-                src="@/assets/img/iconAboutUs1.png"
-            >
+        <div class="glossyCard">
+            <div style="width:max-content">
+                <h2 class=" primary--text text-box-animation text-center" style="font-size:30px">
+                    Quienes somos
+                </h2>
+                <div class="styled-div-animation-text-col terciary"></div>
+            </div>
+            <p class="subtitle-2 graytext--text  font-weight-normal mt-4 " >
+                Wingsoft fue fundada en 1987, con actividades principales de construcción y 
+                alojamiento de sitios web. Está enmarcado por ejecutivos que cuentan con muchos 
+                años de experiencia en el campo de las tecnologías de la información, diseño web, 
+                diseño gráfico y marketing digital.
+            </p>
+            <div class="div-icon">
+                <img
+                    class="iconAboutUs1black"
+                    alt="iconAboutUs"
+                    src="@/assets/img/iconAboutUs1.png"
+                >
+            </div>
         </div>
     </v-col>
     <v-col cols="12" sm="8" md="4" class="parrent px-lg-6 relativecol ">
-        <div style="width:max-content">
-            <h2 class="  primary--text text-box-animation"  style="font-size:30px">
-                Que hacemos
-            </h2>
-             <div class="styled-div-animation-text-col terciary"></div>
-        </div>
-        <p class="subtitle-2 graytext--text  font-weight-normal mt-4 white" >
-            En colaboración con las empresas más grandes de todo el mundo y utilizando la última tecnología y las últimas herramientas, nuestra galardonada empresa desarrolla soluciones digitales con un enfoque innovador, adaptadas a las necesidades de su negocio.
-        </p>
-        <div class="div-icon">
-            <img
-                class="iconAboutUs2"
-                alt="iconAboutUs"
-                src="@/assets/img/iconAboutUs2.png"
-            >
+        <div class="glossyCard">
+            <div style="width:max-content">
+                <h2 class="  primary--text text-box-animation"  style="font-size:30px">
+                    Que hacemos
+                </h2>
+                <div class="styled-div-animation-text-col terciary"></div>
+            </div>
+            <p class="subtitle-2 graytext--text  font-weight-normal mt-4 " >
+                En colaboración con las empresas más grandes de todo el mundo y utilizando la última tecnología y las últimas herramientas, nuestra galardonada empresa desarrolla soluciones digitales con un enfoque innovador, adaptadas a las necesidades de su negocio.
+            </p>
+            <div class="div-icon">
+                <img
+                    class="iconAboutUs2"
+                    alt="iconAboutUs"
+                    src="@/assets/img/iconAboutUs2.png"
+                >
+            </div>
         </div>
     </v-col>
     <v-col cols="12" sm="8" md="4" class="parrent pl-lg-15 relativecol ">
-        <div style="width:max-content">
-            <h2 class="  primary--text text-box-animation"  style="font-size:30px">
-                Nuestras alianzas
-            </h2>
-             <div class="styled-div-animation-text-col terciary"></div>
-        </div>
-        <p class="subtitle-2 graytext--text  font-weight-normal mt-4 white" >
-            Basándonos en la fiabilidad y la confianza, invertimos en asociaciones a largo plazo. Los clientes de Wingsoft incluyen más de 3 mil empresas y organizaciones de todas las categorías y tamaños de Chile e internacionalmente.
-        </p>
-        <div class="div-icon">
-            <img
-                class="iconAboutUs3"
-                alt="iconAboutUs"
-                src="@/assets/img/iconAboutUs3.png"
-            >
+        <div class="glossyCard ">
+            <div style="width:max-content">
+                <h2 class="  primary--text text-box-animation"  style="font-size:30px">
+                    Nuestras alianzas
+                </h2>
+                <div class="styled-div-animation-text-col terciary"></div>
+            </div>
+            <p class="subtitle-2 graytext--text  font-weight-normal mt-4 " >
+                Basándonos en la fiabilidad y la confianza, invertimos en asociaciones a largo plazo. Los clientes de Wingsoft incluyen más de 3 mil empresas y organizaciones de todas las categorías y tamaños de Chile e internacionalmente.
+            </p>
+            <div class="div-icon">
+                <img
+                    class="iconAboutUs3"
+                    alt="iconAboutUs"
+                    src="@/assets/img/iconAboutUs3.png"
+                >
+            </div>
         </div>
     </v-col>
     <v-col cols="12" class="mt-16 pt-lg-16">
@@ -225,8 +231,8 @@ export default {
     .orbit-violet{
         /* full responsive, solo tienes que modificar el width, height (deben ser iguales), el margin right y el top, no tocar el rotate y el rotatex*/ 
         transform: rotate(30deg) rotateX(65deg) ;
-        width: 400px; 
-        height: 400px; 
+        width: 72.72%; 
+        height: 72.72%;
         border-radius: 50% !important;
         border-width: 1px !important;
         position: absolute;
@@ -264,8 +270,8 @@ export default {
     .orbit-blue{
         /* full responsive, solo tienes que modificar el width, height (deben ser iguales), el margin right y el top, no tocar el rotate y el rotatex*/ 
         transform: rotate(-5deg) rotateX(65deg) ;
-        width: 500px; 
-        height: 500px; 
+        width: 90.90%; 
+        height: 90.90%; 
         border-radius: 50% !important;
         border-width: 1px !important;
         position: absolute;
@@ -301,8 +307,8 @@ export default {
     .orbit-orange{
         /* full responsive, solo tienes que modificar el width, height (deben ser iguales), el margin right y el top, no tocar el rotate y el rotatex*/ 
         transform: rotate(90deg) rotateX(65deg) ;
-        width: 500px; 
-        height: 500px; 
+        width: 90.90%; 
+        height: 90.90%; 
         border-radius: 50% !important;
         border-width: 1px !important;
         position: absolute;
@@ -337,8 +343,8 @@ export default {
     .orbit-green{
         /* full responsive, solo tienes que modificar el width, height (deben ser iguales), el margin right y el top, no tocar el rotate y el rotatex*/ 
         transform: rotate(-10deg) rotateX(65deg) ;
-        width: 400px; 
-        height: 400px; 
+        width: 72.72%; 
+        height: 72.72%;
         border-radius: 50% !important;
         border-width: 1px !important;
         position: absolute;
@@ -369,6 +375,14 @@ export default {
     @keyframes goinOutOrbitGreen{
         from  {  margin-top: -9% ;  }
         to { margin-top: 100% ;  margin-right: 100% }
+    }
+
+    .glossyCard{
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.486);
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+
     }
 
     

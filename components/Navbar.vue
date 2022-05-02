@@ -10,7 +10,7 @@
       style="height:62px"
     >
       <v-row justify="center">
-        <v-col cols="12" sm="12" md="3" class="d-flex justify-center">
+        <v-col cols="12" sm="12" md="3" class="d-flex justify-space-between justify-md-center px-6">
           <nuxt-link to="/" class="d-flex align-center justify-center ml-0 ml-lg-3">
             <img
                 class="wingsoft-logo-navbar"
@@ -19,8 +19,13 @@
                 src="@/assets/img/wingsoftLogo.png"
             >
           </nuxt-link>
-          
-          <v-app-bar-nav-icon class="d-md-none white--text mr-2" style="margin-left:-20px" @click.stop="openMenu"/>
+          <v-btn color="white" class="" icon @click.stop="openMenu" v-if="$vuetify.breakpoint.smOnly || $vuetify.breakpoint.xsOnly">
+              <svg class="mr-1" width="28" height="20" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="17" width="17" height="4" fill="white"/>
+                <rect x="8" y="20" width="26" height="4" fill="white"/>
+                <rect y="10" width="34" height="4" fill="white"/>
+              </svg>
+          </v-btn>
         </v-col>
         <v-col cols="12" md="6" class="d-flex justify-center" v-if="$vuetify.breakpoint.lgOnly || $vuetify.breakpoint.xlOnly || $vuetify.breakpoint.mdOnly" >
           <div v-for="(item, index) in items" :key="index" class="parent" @click="$router.push(item.to)" style="cursor:pointer">
@@ -28,7 +33,7 @@
               :class="($route.path===item.to) ? 'font-weight-bold' : ''">
               {{item.title}}
             </a>
-            <div class="styled-div-animation-text " v-if="$route.path!=item.to"></div>
+            <div  :class='(noGreenA) ? "styled-div-animation-text-primary" : "styled-div-animation-text"' v-if="$route.path!=item.to"></div>
           </div>
         </v-col>
         <v-col sm="6" cols="3" md="3" class="d-flex justify-center align-center" v-if="$vuetify.breakpoint.lgOnly || $vuetify.breakpoint.xlOnly || $vuetify.breakpoint.mdOnly">
@@ -56,6 +61,10 @@ export default {
     colorNav:{
       type:String,
       default:'rgba(0, 0, 0, 0)'
+    },
+    noGreenA:{
+      type:Boolean,
+      default:false
     }
   },
   data(){    
@@ -108,6 +117,17 @@ export default {
     opacity: 0;
     transition: 0.3s ease-in-out;
   }
+  .styled-div-animation-text-primary{
+    width: 0%;
+    margin-left: 7.5%;
+    position: relative;
+    background-color: #44006D;
+    height: 4px;
+    margin-top: -12.5px;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+  }
   .styled-a-animation{
      position: relative;
      z-index: 2;
@@ -115,6 +135,10 @@ export default {
   }
 
   .parent:hover .styled-div-animation-text{
+    width: 85%;
+    opacity: 1;
+  }
+  .parent:hover .styled-div-animation-text-primary{
     width: 85%;
     opacity: 1;
   }

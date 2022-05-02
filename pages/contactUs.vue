@@ -47,7 +47,7 @@
                     alt="logowingsoft"
                     src="@/assets/img/logowinsoftgray.png"
                 >
-                <h1 class="white--text text-center text-md-left relativeindex2">¿Quieres hablar de tu próximo proyecto?</h1>
+                <h1 class="white--text text-center text-md-left relativeindex2 responsiveTitleContactUs">¿Quieres hablar de tu próximo proyecto?</h1>
                 <ValidationObserver v-slot="{ valid , handleSubmit  }" ref="contactForm">
                     <form @submit.prevent="handleSubmit(onSubmit(valid))" class="relativeindex2">
                         <ValidationProvider name="Nombre" rules="required" v-slot="{ errors }">
@@ -124,14 +124,17 @@
                                 >
                             </v-textarea>
                         </ValidationProvider>
-                        <v-btn color="white" outlined small class="parrent-btn-main mt-2" type="submit">
-                            <div class="text-capitalize text-btn-with-hover">
-                            <span class="text-capitalize">Enviar</span>
-                            </div>
-                            <div class="div-btn-parrent-send">
-                                <div class="div-btn terciary align-self-start"></div>
-                            </div>
-                        </v-btn>
+                        <div class="w100 d-flex justify-end justify-md-start">
+                            <v-btn color="white" outlined small class="parrent-btn-main mt-2" type="submit">
+                                <div class="text-capitalize text-btn-with-hover">
+                                <span class="text-capitalize">Enviar</span>
+                                </div>
+                                <div class="div-btn-parrent-send">
+                                    <div class="div-btn terciary align-self-start"></div>
+                                </div>
+                            </v-btn>
+                        </div>
+                        
                     </form>
                 </ValidationObserver>
             </v-col>

@@ -10,7 +10,7 @@
       style="height:62px"
     >
       <v-row justify="center">
-        <v-col cols="12" sm="12" md="3" class="d-flex justify-center">
+        <v-col cols="12" sm="12" md="3" class="d-flex justify-space-between justify-md-center px-6">
           <nuxt-link to="/" class="d-flex align-center justify-center ml-0 ml-lg-3">
             <img
                 class="wingsoft-logo-navbar"
@@ -19,8 +19,13 @@
                 src="@/assets/img/wingsoftLogoPurple.png"
             >
           </nuxt-link>
-          
-           <v-app-bar-nav-icon class="d-md-none primary--text mr-2" style="margin-left:-20px" @click.stop="openMenu"/>
+          <v-btn color="primary"  icon @click.stop="openMenu" v-if="$vuetify.breakpoint.smOnly || $vuetify.breakpoint.xsOnly">
+              <svg class="mr-1" width="28" height="20" viewBox="0 0 34 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="17" width="17" height="4" fill="#44006D"/>
+                <rect x="8" y="20" width="26" height="4" fill="#44006D"/>
+                <rect y="10" width="34" height="4" fill="#44006D"/>
+              </svg>
+          </v-btn>
         </v-col>
         <v-col cols="12" md="6" class="d-flex justify-center" 
         v-if="$vuetify.breakpoint.lgOnly || $vuetify.breakpoint.xlOnly || $vuetify.breakpoint.mdOnly" >

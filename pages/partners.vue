@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" sm="10" md="9"  lg="6" class="mt-6 mt-md-0 " >
-         <h1 class="h3 primary--text light-bolder text-center">
+         <h1 class="h3 primary--text light-bolder text-center responsiveTitles">
             Partners
         </h1>
 
@@ -9,9 +9,9 @@
             Enamórate de Wingsoft, estamos certificados para entregar un mejor servicio y calidad en todas nuestras estrategias
         </p>
     </v-col>
-    <v-col cols="12" class="d-flex justify-center align-center">
+    <v-col cols="12" class="d-flex justify-center align-center pb-16">
         <div class="d-flex flex-wrap justify-center align-center" style="width:780px">
-          <div class="microsoft mx-8 my-6">
+          <div class="microsoft mx-8 my-6 glossyCardPartners">
             <img
               class="microsoft-img-black indexImg"
               alt="microsoft-img-black"
@@ -23,7 +23,7 @@
               src="@/assets/img/microsoftlogo.png"
             >
           </div>
-          <div class="mailchimp mx-8 my-6">
+          <div class="mailchimp mx-8 my-6 glossyCardPartners">
             <img
               class="mailchimp-img-black indexImg"
               alt="mailchimp-img-black"
@@ -35,7 +35,7 @@
               src="@/assets/img/mailchimp.png"
             >
           </div>
-          <div class="shopifyplus mx-8 my-6">
+          <div class="shopifyplus mx-8 my-6 glossyCardPartners">
             <img
               class="shopifyplus-img-black indexImg"
               alt="shopifyplus-img-black"
@@ -47,7 +47,7 @@
               src="@/assets/img/shopify.png"
             >
           </div>
-          <div class="fbmarketing mx-8 mt-7 my-6">
+          <div class="fbmarketing mx-8 mt-7 my-6 glossyCardPartners">
             <img
               class="fbmarketing-img-black indexImg"
               alt="fbmarketing-img-black"
@@ -59,7 +59,7 @@
               src="@/assets/img/fb.png"
             >
           </div>
-          <div class="hubspot mx-8 my-6">
+          <div class="hubspot mx-8 my-6 glossyCardPartners">
             <img
               class="hubspot-img-black indexImg"
               alt="hubspot-img-black"
@@ -161,6 +161,7 @@ export default {
   .microsoft{
     width:190px;
     height: 41px;
+
   }
   .microsoft-img-black{
     width:190px;
@@ -307,8 +308,8 @@ export default {
     .orbit-blue2{
         /* full responsive, solo tienes que modificar el width, height (deben ser iguales), el margin right y el top, no tocar el rotate y el rotatex*/ 
         transform: rotate(-45deg) rotateX(75deg) ;
-        width: 500px; 
-        height: 500px; 
+        width: 66.66%; 
+        height: 66.66%; 
         border-radius: 50% !important;
         border-width: 1px !important;
         position: absolute;
@@ -344,8 +345,8 @@ export default {
     .orbit-orange2{
         /* full responsive, solo tienes que modificar el width, height (deben ser iguales), el margin right y el top, no tocar el rotate y el rotatex*/ 
         transform: rotate(-10deg) rotateX(72deg) ;
-        width: 570px; 
-        height: 570px; 
+        width: 76%; 
+        height: 76%; 
         border-radius: 50% !important;
         border-width: 1px !important;
         position: absolute;
@@ -381,8 +382,8 @@ export default {
     .orbit-green2{
         /* full responsive, solo tienes que modificar el width, height (deben ser iguales), el margin right y el top, no tocar el rotate y el rotatex*/ 
         transform: rotate(-120deg) rotateX(72deg) ;
-        width: 600px; 
-        height: 600px; 
+        width: 80%; 
+        height: 80%; 
         border-radius: 50% !important;
         border-width: 1px !important;
         position: absolute;
@@ -413,5 +414,12 @@ export default {
     @keyframes goinOutOrbitGreen2{
         from  {  margin-top: -11% ;  }
         to { margin-top: 130% ;  margin-right:-130% }
+    }
+
+    .glossyCardPartners{
+        background-color: rgba(255, 255, 255, .05);
+        backdrop-filter: blur(5px);
+        border-radius: 6px;
+        z-index: 1;
     }
 </style>

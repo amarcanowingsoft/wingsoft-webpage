@@ -1,17 +1,19 @@
 <template>
-    <div class="d-flex justify-center flex-column flex-md-row align-center div-all-ask">
+    <div class="d-flex justify-center  ">
+        <div class="glossyCardAsk d-flex justify-center flex-column flex-md-row align-center div-all-ask pt-2">
         <div class="div-ask-orange white--text px-3 py-1 mr-2 mb-3 mb-md-0">
              {{(isAsk)?'PREGUNTA':'NOTICIAS'}}
         </div>
-        <div class="primary--text text-div-ask d-flex"  v-if="$vuetify.breakpoint.lgOnly || $vuetify.breakpoint.xlOnly || $vuetify.breakpoint.mdOnly || $vuetify.breakpoint.smOnly">
+        <div class="primary--text text-div-ask d-flex text-center justify-center"  v-if="$vuetify.breakpoint.lgOnly || $vuetify.breakpoint.xlOnly || $vuetify.breakpoint.mdOnly || $vuetify.breakpoint.smOnly">
             <span> {{(isAsk)?'Cualquier duda o consulta,':'Para ver todas las noticias,'}}</span>
             <div style="cursor:pointer" @click="actionText()" class="styled-go-to ml-1"><span>
                 {{(isAsk)?'Escríbenos':'Haz click aquí'}}
             </span></div>
         </div>
-        <div v-else>
+        <div v-else class="text-center justify-center">
             <span class="primary--text"> {{(isAsk)?'Cualquier duda o consulta,':'Para ver todas las noticias,'}} 
-            <span class="styled-go-to" @click="actionText()">{{(isAsk)?'Escríbenos':'Haz click aquí'}}</span></span>
+            <span style="cursor:pointer" class="styled-go-to" @click="actionText()">{{(isAsk)?'Escríbenos':'Haz click aquí'}}</span></span>
+        </div>
         </div>
     </div>
 </template>
@@ -70,5 +72,13 @@ export default {
     }
     .styled-go-to:hover {
         background-size: 100% 2px;
+    }
+
+    .glossyCardAsk{
+        
+        background-color: rgba(255, 255, 255, .05);
+        backdrop-filter: blur(5px);
+        border-radius: 8px;
+
     }
 </style>

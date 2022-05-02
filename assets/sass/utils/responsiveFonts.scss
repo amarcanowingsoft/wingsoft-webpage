@@ -1,0 +1,17 @@
+@media screen and (max-width: 600px){
+    .responsiveTitles{
+        font-size: 32px !important;
+    }
+    .responsiveTitleContactUs{
+        font-size: 26px !important;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px){
+    .responsiveTitles{
+        font-size: 42px !important;
+    }
+    .responsiveTitleContactUs{
+        font-size: 30px !important;
+    }
+}

@@ -12,7 +12,7 @@
         <div class="white">
             <v-row justify="center" align="center" class="pb-10">
                 <v-col cols="12" sm="10" md="9"  lg="6" class="mt-6 px-6" >
-                    <h1 class="h3 primary--text light-bolder text-center">
+                    <h1 class="h3 primary--text light-bolder text-center responsiveTitles">
                         Wingsoft Venture
                     </h1>
                     <p class="subtitle-2 graytext--text text-center font-weight-normal mt-4" >
@@ -39,7 +39,7 @@
                     </div>
                 </v-col>
                 <v-col cols="12" sm="10" md="9"  lg="6" class="mt-6 px-6" >
-                    <h1 class="h3 primary--text light-bolder text-center">
+                    <h1 class="h3 primary--text light-bolder text-center responsiveTitles">
                         Lo que te ofrecemos
                     </h1>
                     <p class="subtitle-2 graytext--text text-center font-weight-normal mt-4" >
@@ -60,11 +60,16 @@
                             <p class="subtitle-2 graytext--text  font-weight-normal mt-4" >
                                 Quiere la boca exhausta vid, kiwi, piña y fugaz jamón. Fabio me exige, sin tapujos, que añada cerveza al whisky.
                             </p>
-                            <div class="div-icon">
+                            <div class="div-icon-service">
                                 <img
-                                    class="logowingsoftblack"
+                                    class="div-icon-service-img-outlined"
                                     alt="logowingsoft"
-                                    src="@/assets/img/logowingsoftblack.png"
+                                    src="@/assets/img/wingsoftOutlined.webp"
+                                >
+                                <img
+                                    class="div-icon-service-img-purple"
+                                    alt="logowingsoft"
+                                    src="@/assets/img/wingsoftPurple.webp"
                                 >
                             </div>
                         </div>
@@ -74,7 +79,7 @@
         </div>
         <v-row justify="center" align="center" class="pb-10">
             <v-col cols="12" sm="10" md="10"  lg="8" class="mt-13 px-6" >
-                <h1 class="h3 white--text light-bolder text-center">
+                <h1 class="h3 white--text light-bolder text-center responsiveTitles">
                     Por qué colaborar con nosotros
                 </h1>
                 <p class="subtitle-2 white--text text-center font-weight-normal mt-4 px-md-16 mx-lg-16" >
@@ -104,7 +109,7 @@
         <div class="white px-lg-12 pt-15">
             <v-row justify="center" align="center" class="pb-10 px-md-16 px-sm-10">
                 <v-col cols="12" md="6"  class="mt-0 px-md-6 px-6" >
-                    <h1 class="h3 primary--text text-center text-md-left">
+                    <h1 class="h3 primary--text text-center text-md-left responsiveTitles">
                         Proyectos destacados
                     </h1>
                     <p class="subtitle-2 graytext--text  font-weight-normal text-center text-md-left" >
@@ -162,7 +167,7 @@
                 src="@/assets/img/logowinsoftgray.png"
             >
             <v-col cols="12" md="6"  class="mt-0 px-md-6"  >
-                <h1 class="h4 white--text text-center text-md-left">
+                <h1 class="h4 white--text text-center text-md-left responsiveTitleContactUs">
                     ¿Quieres hablar de tu próximo proyecto?
                 </h1>
             </v-col>
@@ -395,19 +400,31 @@ export default {
         width: 282px;
         height: 191px;
     }
-    .cardServiceOffer .div-icon img{
+    
+    .cardServiceOffer .div-icon-service img{
         width: 34px;
         height: 34px;
-        filter:invert(100%) sepia(0%) saturate(0%) hue-rotate(44deg) brightness(103%) contrast(101%) drop-shadow(1px 1px 0 #44006D) drop-shadow(-1px -1px 0 #44006D) ;
-        transition: 0.2 ease-in;
+        transition: 0.2s ease-in-out;
+        position: absolute;
     }
     .cardServiceOffer:hover .styled-div-animation-text-col{
         width: 112%;
         opacity: 1;
     }
-    .cardServiceOffer:hover .div-icon img {
-        filter: invert(11%) sepia(38%) saturate(5119%) hue-rotate(282deg) brightness(94%) contrast(116%);
+    .div-icon-service-img-outlined{
+        opacity: 1;
+    }
+    .div-icon-service-img-purple{
+        opacity: 0;
+    }
+    .cardServiceOffer:hover .div-icon-service img {
         margin-top: -10px;
+    }
+    .cardServiceOffer:hover .div-icon-service-img-purple{
+        opacity: 1;
+    }
+    .cardServiceOffer:hover .div-icon-service-img-outlined{
+        opacity: 0;
     }
     
     .cardColaboration{

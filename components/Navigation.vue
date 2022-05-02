@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <div class="d-flex justify-center align-center mt-6" v-if="$vuetify.breakpoint.xsOnly ">
+        <div class="d-flex justify-center align-center mt-6" >
           <v-btn color="white" outlined x-small class="parrent-btn-main">
             <div class="text-capitalize text-btn-with-hover">
               <span class="text-capitalize">Trabaja 

@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" sm="10" md="9"  lg="6" class="mt-6 mt-md-0 " >
-         <h1 class="h3 primary--text light-bolder text-center">
+         <h1 class="h3 primary--text light-bolder text-center responsiveTitles">
             Knowledge
         </h1>
 
@@ -173,8 +173,8 @@ export default {
     .orbit-purple{
         /* full responsive, solo tienes que modificar el width, height (deben ser iguales), el margin right y el top, no tocar el rotate y el rotatex*/ 
         transform: rotate(35deg) rotateX(65deg) ;
-        width: 600px; 
-        height: 600px; 
+        width: 80%;
+        height: 80%;
         border-radius: 50% !important;
         border-width: 1px !important;
         position: absolute;
