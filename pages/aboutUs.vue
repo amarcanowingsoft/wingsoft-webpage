@@ -15,7 +15,7 @@
     <v-col cols="12" sm="8" md="4" class="parrent pr-lg-15 relativecol " >
         <div class="glossyCard">
             <div style="width:max-content">
-                <h2 class=" primary--text text-box-animation text-center" style="font-size:30px">
+                <h2 class=" primary--text text-box-animation text-center h2responsive" >
                     Quienes somos
                 </h2>
                 <div class="styled-div-animation-text-col terciary"></div>
@@ -38,7 +38,7 @@
     <v-col cols="12" sm="8" md="4" class="parrent px-lg-6 relativecol ">
         <div class="glossyCard">
             <div style="width:max-content">
-                <h2 class="  primary--text text-box-animation"  style="font-size:30px">
+                <h2 class="  primary--text text-box-animation h2responsive"  >
                     Que hacemos
                 </h2>
                 <div class="styled-div-animation-text-col terciary"></div>
@@ -58,7 +58,7 @@
     <v-col cols="12" sm="8" md="4" class="parrent pl-lg-15 relativecol ">
         <div class="glossyCard ">
             <div style="width:max-content">
-                <h2 class="  primary--text text-box-animation"  style="font-size:30px">
+                <h2 class="  primary--text text-box-animation h2responsive"  >
                     Nuestras alianzas
                 </h2>
                 <div class="styled-div-animation-text-col terciary"></div>
@@ -379,10 +379,34 @@ export default {
 
     .glossyCard{
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.486);
+        background-color: rgba(255, 255, 255, 0.637);
         backdrop-filter: blur(10px);
         border-radius: 8px;
 
+    }
+    .h2responsive{
+        font-size: 30px;
+    }
+    @media screen and (max-width: 480px){
+        .orbits-about-us{
+            position: fixed;
+            width: 350px;
+            height: 350px;
+            bottom: -90px;
+            right: -90px
+        }
+        .h2responsive{
+            font-size: 24px;
+        }
+    }
+    @media screen and (min-width: 480px) and (max-width: 600px){
+        .orbits-about-us{
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            bottom: -200px;
+            right: -120px
+        }
     }
 
     

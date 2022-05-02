@@ -9,8 +9,8 @@
             Enamórate de Wingsoft, estamos certificados para entregar un mejor servicio y calidad en todas nuestras estrategias
         </p>
     </v-col>
-    <v-col cols="12" class="d-flex justify-center align-center pb-16">
-        <div class="d-flex flex-wrap justify-center align-center" style="width:780px">
+    <v-col cols="12" class="d-flex  justify-center align-center pb-md-16 mb-2">
+        <div class="d-flex flex-wrap justify-center align-center flex-column flex-sm-row" style="width:780px">
           <div class="microsoft mx-8 my-6 glossyCardPartners">
             <img
               class="microsoft-img-black indexImg"
@@ -73,6 +73,9 @@
           </div>
         </div>
     </v-col>
+    <v-col cols="12" class="mt-16 pt-lg-16">
+        <Ask/>
+    </v-col>    
     <div class="d-flex justify-center orbits-partners">
         <div class="orbit-blue2 d-flex justify-center align-center">
             <div class="orbit-blue-inner2 d-flex justify-center align-center orbit">
@@ -97,7 +100,11 @@
 </template>
 
 <script>
+import Ask from "@/components/Ask.vue";
 export default {
+  components:{
+        Ask
+    },
   layout:'mainWhite',
   head () {
       return {
@@ -422,4 +429,25 @@ export default {
         border-radius: 6px;
         z-index: 1;
     }
+
+    @media screen and (max-width: 480px){
+      .orbits-partners{
+          position: fixed;
+          width: 450px;
+          height: 450px;
+          bottom: -270px;
+          left: -270px
+      }
+    }
+    @media screen and (min-width: 480px) and (max-width: 600px){
+      .orbits-partners{
+          position: fixed;
+          width: 550px;
+          height: 550px;
+          bottom: -320px;
+          left: -300px
+      }
+    }
+
+
 </style>

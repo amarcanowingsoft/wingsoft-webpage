@@ -2,7 +2,7 @@
     <div>
         <div class="px-6 px-sm-16 d-flex flex-wrap justify-space-between pt-0 pb-10">
             <div style="width:max-content;cursor:pointer" class="parrent mt-5" @click="$router.push('/services')">
-                <h1 class="white--text text-box-animation">Regresar a los servicios</h1>
+                <h1 class="white--text text-box-animation goBackh1">Regresar a los servicios</h1>
                 <div class="styled-div-animation-text-col primary"></div>
             </div>
             <div style="width: 528px;" class="mt-5">

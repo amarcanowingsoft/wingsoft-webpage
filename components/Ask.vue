@@ -1,6 +1,6 @@
 <template>
     <div class="d-flex justify-center  ">
-        <div class="glossyCardAsk d-flex justify-center flex-column flex-md-row align-center div-all-ask pt-2">
+        <div class="glossyCardAsk d-flex justify-center flex-column flex-md-row align-center div-all-ask py-2">
         <div class="div-ask-orange white--text px-3 py-1 mr-2 mb-3 mb-md-0">
              {{(isAsk)?'PREGUNTA':'NOTICIAS'}}
         </div>
@@ -76,7 +76,7 @@ export default {
 
     .glossyCardAsk{
         
-        background-color: rgba(255, 255, 255, .05);
+        background-color: rgba(255, 255, 255, 0.411);
         backdrop-filter: blur(5px);
         border-radius: 8px;
 
