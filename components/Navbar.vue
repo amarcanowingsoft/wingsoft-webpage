@@ -10,8 +10,7 @@
       style="height:62px"
     >
       <v-row justify="center">
-        <v-col cols="12" sm="6" md="3" class="d-flex justify-center">
-          <v-app-bar-nav-icon class="d-md-none white--text mr-2" style="margin-left:-20px" @click.stop="openMenu"/>
+        <v-col cols="12" sm="12" md="3" class="d-flex justify-center">
           <nuxt-link to="/" class="d-flex align-center justify-center ml-0 ml-lg-3">
             <img
                 class="wingsoft-logo-navbar"
@@ -20,6 +19,8 @@
                 src="@/assets/img/wingsoftLogo.png"
             >
           </nuxt-link>
+          
+          <v-app-bar-nav-icon class="d-md-none white--text mr-2" style="margin-left:-20px" @click.stop="openMenu"/>
         </v-col>
         <v-col cols="12" md="6" class="d-flex justify-center" v-if="$vuetify.breakpoint.lgOnly || $vuetify.breakpoint.xlOnly || $vuetify.breakpoint.mdOnly" >
           <div v-for="(item, index) in items" :key="index" class="parent" @click="$router.push(item.to)" style="cursor:pointer">
@@ -30,7 +31,7 @@
             <div class="styled-div-animation-text " v-if="$route.path!=item.to"></div>
           </div>
         </v-col>
-        <v-col sm="6" cols="3" md="3" class="d-flex justify-center align-center" v-if="$vuetify.breakpoint.lgOnly || $vuetify.breakpoint.xlOnly || $vuetify.breakpoint.mdOnly || $vuetify.breakpoint.smOnly">
+        <v-col sm="6" cols="3" md="3" class="d-flex justify-center align-center" v-if="$vuetify.breakpoint.lgOnly || $vuetify.breakpoint.xlOnly || $vuetify.breakpoint.mdOnly">
           <v-btn color="white" outlined x-small class="parrent-btn-main">
             <div class="text-capitalize text-btn-with-hover">
               <span class="text-capitalize">Trabaja 

@@ -33,10 +33,10 @@
   <v-row justify="center"  class="fill-height">
     <v-col cols="12" class="pt-md-5 pt-lg-16  mt-md-16 pb-0 pb-md-3">
       <div class="fixed-z-index-text mt-md-10 ">
-        <h1 class=" white--text font-weight-medium mt-2 text-center text-md-left px-6 px-md-0" >
+        <h1 class=" white--text font-weight-medium mt-4 mt-md-2 text-center text-md-left px-3 px-md-0" >
           El mundo está cambiando rápido. 
         </h1>
-        <h1 class="white--text font-weight-bold text-center text-md-left px-6 px-md-0" >
+        <h1 class="white--text font-weight-bold text-center text-md-left px-3 px-md-0" >
           Te ayudamos a mantenerte al día.
         </h1>
         <div>
@@ -49,7 +49,7 @@
         <h2 class="terciary--text font-weight-medium text-center text-md-left" >
           Hacking the future
         </h2>
-        <div class="d-flex justify-center mt-10" v-if="$vuetify.breakpoint.xsOnly || $vuetify.breakpoint.smOnly">
+        <div class="d-flex justify-center mt-8" v-if="$vuetify.breakpoint.xsOnly || $vuetify.breakpoint.smOnly">
           <a href="https://www.facebook.com/wingsoftchile/" target="_blank" class="my-1 mx-2 a-icon">
             <v-icon color="white" >mdi-facebook</v-icon>
           </a> 
@@ -601,12 +601,12 @@ export default {
   }
 
   
-  @media screen and (max-width: 960px){
+  @media screen and (max-width: 960px){/*
     .first-orbit{
       margin-right: 0px;
       margin-top:-90px;
       position: relative;
-    }
+    }*/
     .fixed-z-index-text div img{
       width: 95%;
       margin-left: 2.5%;
@@ -621,7 +621,7 @@ export default {
       font-size:30px
     }
     .fixed-z-index-text h2{
-      font-size:16px
+      font-size:20px
     }
   }
   @media screen and (min-width: 600px) and (max-width: 960px){
@@ -633,84 +633,125 @@ export default {
     }
   }
   @media screen and (max-width: 320px){
-    .first-orbit{
+    /*.first-orbit{
       width: 200px;
       height: 200px;
       margin-top:-60px;
     }
     .fixed-z-index-text{
       margin-top:-50px;
-    }
+    }*/
   }
   @media screen and (min-width: 320px) and (max-width: 400px){
-    .first-orbit{
+    /*.first-orbit{
       width: 305px;
       height: 305px;
     }
     .fixed-z-index-text{
       margin-top:-70px;
-    }
+    }*/
   }
   @media screen and (min-width: 400px) and (max-width: 500px){
-    .first-orbit{
+    /*.first-orbit{
       width: 390px;
       height: 390px;
       margin-top:-110px;
     }
     .fixed-z-index-text{
       margin-top:-80px;
-    }
+    }*/
   }
    @media screen and (min-width: 500px) and (max-width: 600px){
-    .first-orbit{
+    /*.first-orbit{
       width: 490px;
       height: 490px;
       margin-top:-130px;
     }
     .fixed-z-index-text{
       margin-top:-95px;
-    }
+    }*/
   }
   @media screen and (min-width: 600px) and (max-width: 700px){
-    .first-orbit{
+    /*.first-orbit{
       width: 600px;
       height: 600px;
       margin-top:-160px;
-    }
+    }/*
     .fixed-z-index-text{
       margin-top:-160px;
-    }
+    }*/
   }
   @media screen and (min-width: 700px) and (max-width: 800px){
-    .first-orbit{
+    /*.first-orbit{
       width: 700px;
       height: 700px;
       margin-top:-190px;
     }
     .fixed-z-index-text{
       margin-top:-180px;
-    }
+    }*/
   }
   @media screen and (min-width: 800px) and (max-width: 900px){
-    .first-orbit{
+    /*.first-orbit{
       width: 800px;
       height: 800px;
       margin-top:-210px;
-    }
+    }/*
     .fixed-z-index-text{
       margin-top:-200px;
-    }
+    }*/
   }
   @media screen and (min-width: 900px) and (max-width: 960px){
-    .first-orbit{
+    /*.first-orbit{
       width: 900px;
       height: 900px;
       margin-top:-250px;
-    }
+    }/*
     .fixed-z-index-text{
       margin-top:-230px;
+    }*/
+  }
+  @media screen and (min-width: 200px) and (max-width: 450px){
+    .first-orbit{
+      width: 850px;
+      height: 850px;
+      margin-top:80px;
+      margin-right: -150px
     }
   }
+  @media screen and (min-width: 450px) and (max-width: 555px){
+    .first-orbit{
+      width: 950px;
+      height: 950px;
+      margin-top:80px;
+      margin-right: -150px
+    }
+  }
+  @media screen and (min-width: 555px) and (max-width: 600px){
+    .first-orbit{
+      width: 950px;
+      height: 950px;
+      margin-top:20px;
+      margin-right: -150px
+    }
+  }
+  @media screen and (min-width: 600px) and (max-width: 750px){
+    .first-orbit{
+      width: 1050px;
+      height: 1050px;
+      margin-top:80px;
+      margin-right: -150px
+    }
+  }
+  @media screen and (min-width: 750px) and (max-width: 960px){
+    .first-orbit{
+      width: 1150px;
+      height: 1150px;
+      margin-top:-20px;
+      margin-right: -150px
+    }
+  }
+  
   @media screen and (min-width: 960px) and (max-width: 1100px){
     .first-orbit{
       width: 1200px;

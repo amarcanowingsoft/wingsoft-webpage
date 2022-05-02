@@ -1,7 +1,8 @@
 <template>
     <div class="px-6 px-sm-16">
         <v-row class="px-lg-16">
-            <v-col cols="12" md="6" class="d-flex align-end mb-6 mb-md-0">
+            <v-col cols="12" md="6" class="d-flex align-end mb-6 mb-md-0"
+                v-if="$vuetify.breakpoint.lgOnly || $vuetify.breakpoint.xlOnly || $vuetify.breakpoint.mdOnly">
                 <div>
                     <div class="d-flex flex-column justify-start">
                         <h2 class="h6 font-weight-bold white--text">Contáctanos</h2>
@@ -133,6 +134,46 @@
                         </v-btn>
                     </form>
                 </ValidationObserver>
+            </v-col>
+            <v-col cols="12" md="6" class="d-flex align-end mb-6 mb-md-0"
+                v-if="$vuetify.breakpoint.smOnly || $vuetify.breakpoint.xsOnly">
+                <div>
+                    <div class="d-flex flex-column justify-start">
+                        <h2 class="h6 font-weight-bold white--text">Contáctanos</h2>
+                        <div class="white mt-1" style="width:115px; height:1px"></div>
+                    </div>
+                    <h3 class="h6 font-weight-thin white--text mt-3">+01 234 567 890</h3>
+                    <h3 class="h6 font-weight-thin white--text">Juan Valiente 3630, Vitacura, Chile</h3>
+                    <h3 class="h6 font-weight-thin white--text">contacto@wingsoft.com</h3>
+                    <div class="d-flex flex-column justify-start mt-12">
+                        <h2 class="h6 font-weight-bold white--text">Social</h2>
+                        <div class="white mt-1" style="width:115px; height:1px"></div>
+                    </div>
+                    <div class="d-flex flex-column justify-start mt-2 relativeindex2">
+                        <a href="https://www.facebook.com/wingsoftchile/" target="_blank"
+                        class="subtitle-1 font-weight-light white--text my-1">
+                            <v-icon color="white" class="mr-1">mdi-facebook</v-icon>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.linkedin.com/company/wingsoftcl" target="_blank" 
+                        class="subtitle-1 font-weight-light white--text my-1">
+                            <v-icon color="white" class="mr-1">mdi-linkedin</v-icon>
+                            <span>Linkedin</span>
+                        </a>
+                        <a href="https://www.instagram.com/wingsofthq" target="_blank"
+                        class="subtitle-1 font-weight-light white--text my-1">
+                            <v-icon color="white" class="mr-1">mdi-instagram</v-icon>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://twitter.com/wingsoft" target="_blank"
+                        class="subtitle-1 font-weight-light white--text my-1">
+                            <v-icon color="white" class="mr-1">mdi-twitter</v-icon>
+                            <span>Twitter</span>
+                        </a>
+                        
+                    </div>
+                   
+                </div>
             </v-col>
         </v-row>
         <div class="d-flex justify-space-between mt-10 relativeindex2">
